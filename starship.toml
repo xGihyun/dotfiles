@@ -1,0 +1,137 @@
+# format = """
+# [░▒▓](#a3aed2)\
+# $os\
+# [](bg:#769ff0 fg:#a3aed2)\
+# $directory\
+# [](fg:#769ff0 bg:#394260)\
+# $git_branch\
+# $git_status\
+# [](fg:#394260 bg:#212736)\
+# $nodejs\
+# $rust\
+# $golang\
+# $php\
+# [](fg:#212736 bg:#1d2230)\
+# $time\
+# [ ](fg:#1d2230)\
+# \n$character"""
+
+format = """
+[░▒▓](#d2c5a3)\
+$os\
+[](bg:#f9de8d fg:#d2c5a3)\
+$directory\
+[](fg:#f9de8d bg:#e8a76f)\
+$git_branch\
+$git_status\
+[](fg:#e8a76f bg:#51473b)\
+$nodejs\
+$rust\
+$golang\
+$php\
+[](fg:#51473b bg:#2f1d1b)\
+$time\
+[ ](fg:#2f1d1b)\
+\n$character"""
+
+[os]
+format = "[  ]($style)"
+# style = "bg:#a3aed2 fg:#090c0c"
+style = "bg:#d2c5a3 fg:#090c0c"
+disabled = false
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+# Mint = " "
+Mint = "󰣭 "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Windows = "󰍲 "
+
+[character]
+success_symbol = ""
+error_symbol = ""
+
+[directory]
+style = "fg:#51473b bg:#f9de8d"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+"Games" = "󰊗 "
+"Videos" = "󱜏 "
+"Desktop" = "󰇄 "
+
+[git_branch]
+symbol = ""
+style = "bg:#e8a76f"
+format = '[[ $symbol $branch ](fg:#2f1d1b bg:#e8a76f)]($style)'
+
+[git_status]
+style = "bg:#e8a76f"
+format = '[[($all_status$ahead_behind )](fg:#2f1d1b bg:#e8a76f)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#51473b"
+format = '[[ $symbol ($version) ](fg:#f9de8d bg:#51473b)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#51473b"
+format = '[[ $symbol ($version) ](fg:#f9de8d bg:#51473b)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:#51473b"
+format = '[[ $symbol ($version) ](fg:#f9de8d bg:#51473b)]($style)'
+
+[php]
+symbol = ""
+style = "bg:#51473b"
+format = '[[ $symbol ($version) ](fg:#f9de8d bg:#51473b)]($style)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#2f1d1b"
+format = '[[  $time ](fg:#e8a76f bg:#2f1d1b)]($style)'

@@ -1,0 +1,14 @@
+location=middle
+show=drun
+width=600
+height=500
+always_parse_args=true
+show_all=true
+print_command=true
+insensitive=true
+normal_window=true
+allow_images=true
+insensitive=true
+# xoffset=655
+# yoffset=230
+prompt=
