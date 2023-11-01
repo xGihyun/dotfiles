@@ -1,4 +1,4 @@
-@import "./themes/tokyonight/storm.css";
+@import "./themes/catppuccin/mocha.css";
 
 * {
   /* `otf-font-awesome` is required to be installed for icons */
@@ -113,6 +113,10 @@ button:hover {
   margin: 0 4px;
 }
 
+#window {
+  color: @subtext0;
+}
+
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
   margin-left: 0;
@@ -124,7 +128,7 @@ button:hover {
 }
 
 #clock {
-  color: @yellow;
+  color: @teal;
 }
 
 /* #battery { */
@@ -139,14 +143,13 @@ button:hover {
 
 @keyframes blink {
   to {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: @red;
+    color: #000;
   }
 }
 
 #battery.critical:not(.charging) {
-  background-color: #f53c3c;
-  color: #ffffff;
+  color: @red;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -176,7 +179,7 @@ label:focus {
 }
 
 #network {
-  color: @sky0;
+  color: @pink;
 }
 
 #network.disconnected {

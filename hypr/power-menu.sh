@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 chosen=$(printf "  Power Off\n  Restart\n  Suspend\n  Hibernate\n󰍃  Log Out\n  Lock" | wofi -dmenu -i)
 

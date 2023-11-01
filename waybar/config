@@ -128,9 +128,10 @@
         },
         "format": "{icon} {capacity}%",
         "format-charging": "󰂄 {capacity}%",
-        "format-plugged": " {capacity}%",
+        "format-plugged": "󰂄 {capacity}%",
         "format-alt": "{icon} {time}",
-        "format-icons": ["󰁻", "󰁽", "󰁿", "󰂁", "󰁹"]
+        "format-icons": ["󰁻", "󰁽", "󰁿", "󰂁", "󰁹"],
+        "interval": 20
     },
     "battery#bat2": {
         "bat": "BAT2"

@@ -21,13 +21,19 @@ return {
   --   style = "storm",
   --   transparent = true,
   -- },
-  -- { "catppuccin/nvim", name = "catppuccin", priority = 1000, opts = {
-  --   flavor = "mocha",
-  -- } },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    opts = {
+      flavor = "mocha",
+      transparent_background = true,
+    },
+  },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "monokai-pro",
+      colorscheme = "catppuccin",
     },
   },
 }
