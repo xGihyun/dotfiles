@@ -13,7 +13,6 @@ return {
       "typescript",
       "tsx",
       "rust",
-      "vim",
     },
   },
 }

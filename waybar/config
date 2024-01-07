@@ -95,7 +95,7 @@
         "spacing": 10
     },
     "clock": {
-        // "timezone": "America/New_York",
+        // "timezone": "UTC",
         "format": "󰸗 {:%a, %b %d  󰥔 %I:%M %p}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
@@ -182,7 +182,7 @@
     },
     "custom/power": {
       "format": "",
-      "on-click": "~/.config/hypr/power-menu.sh"
+      "on-click": "~/dotfiles-hyprland/rofi/scripts/power-menu.sh"
     }
 }
 

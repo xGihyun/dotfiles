@@ -11,7 +11,7 @@
 }
 
 window#waybar {
-  background-color: rgba(0, 0, 0, 1);
+  background-color: @crust;
   color: #ffffff;
   transition-property: background-color;
   transition-duration: 0.5s;
@@ -75,7 +75,7 @@ button:hover {
 }
 
 #workspaces button:not(.active) {
-  color: rgba(255, 255, 255, 0.5);
+  color: @surface2;
 }
 
 #workspaces button.urgent {
@@ -108,6 +108,11 @@ button:hover {
   color: #ffffff;
 }
 
+#custom-home,
+#custom-power {
+  color: @text;
+}
+
 #window,
 #workspaces {
   margin: 0 4px;
@@ -128,7 +133,7 @@ button:hover {
 }
 
 #clock {
-  color: @teal;
+  color: @rosewater;
 }
 
 /* #battery { */

@@ -1,0 +1,46 @@
+theme = "catppuccin_mocha"
+
+[editor]
+line-number = "relative"
+bufferline = "multiple"
+cursorline = true
+true-color = true
+
+[editor.indent-guides]
+character = "╎"
+render = true
+
+[editor.lsp]
+display-inlay-hints = true
+auto-signature-help = false
+display-messages = true
+
+[keys.normal]
+esc = ["collapse_selection", "keep_primary_selection"]
+tab = [":bn"]
+S-tab = [":bp"]
+L = [":bn"]
+H = [":bp"]
+p = [":clipboard-paste-after"]
+y = ["yank_main_selection_to_clipboard"]
+A-x = ["extend_to_line_bounds"]
+X = ["extend_line_up", "extend_to_line_bounds"]
+i = ["collapse_selection", "keep_primary_selection", "insert_mode"]
+a = ["collapse_selection", "keep_primary_selection", "append_mode", "collapse_selection", "keep_primary_selection"]
+C-h = ["jump_view_left"]
+C-j = ["jump_view_down"]
+C-k = ["jump_view_up"]
+C-l = ["jump_view_right"]
+
+[keys.select]
+A-x = ["extend_to_line_bounds"]
+X = ["extend_line_up", "extend_to_line_bounds"]
+
+[keys.normal.space]
+x = [":buffer-close"]
+
+[editor.cursor-shape]
+insert = "block"
+
+[editor.file-picker]
+hidden = false
