@@ -3,3 +3,4 @@
 -- Add any additional options here
 
 vim.opt.guicursor = ""
+vim.opt.conceallevel = 1
