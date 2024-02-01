@@ -13,6 +13,7 @@ return {
       "typescript",
       "tsx",
       "rust",
+      "astro",
     },
   },
 }
