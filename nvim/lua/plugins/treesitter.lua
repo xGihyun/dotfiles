@@ -14,6 +14,11 @@ return {
       "tsx",
       "rust",
       "astro",
+      "markdown",
+      "markdown_inline",
+    },
+    highlight = {
+      enable = true,
     },
   },
 }

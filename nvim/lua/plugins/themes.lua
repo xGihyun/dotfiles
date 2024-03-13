@@ -8,11 +8,22 @@ return {
       transparent_background = false,
     },
   },
-  { "rose-pine/neovim", name = "rose-pine", priority = 1000, opts = { variant = "moon" } },
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    priority = 1000,
+    opts = {
+      variant = "main",
+      highlight_groups = {
+        ["@constructor"] = { fg = "subtle" },
+        -- String = { fg = "#f6c177" },
+      },
+    },
+  },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "rose-pine",
     },
   },
 }

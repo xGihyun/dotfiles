@@ -15,6 +15,8 @@ return {
   dependencies = {
     -- Required.
     "nvim-lua/plenary.nvim",
+    "hrsh7th/nvim-cmp",
+    "nvim-treesitter/nvim-treesitter",
 
     -- see below for full list of optional dependencies 👇
   },
@@ -25,8 +27,8 @@ return {
         path = "~/Documents/Obsidian Vault/personal/",
       },
       {
-        name = "work",
-        path = "~/Documents/Obsidian Vault/",
+        name = "academics",
+        path = "~/Documents/Obsidian Vault/academics/",
       },
     },
 
