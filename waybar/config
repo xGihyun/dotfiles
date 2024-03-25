@@ -6,7 +6,7 @@
     "spacing": 4, // Gaps between modules (4px)
     "margin": "0px",
     // Choose the order of the modules
-    "modules-left": ["custom/home", "hyprland/workspaces"],
+    "modules-left": ["custom/home", "hyprland/workspaces", "river/tags"],
     "modules-center": ["clock"],
     "modules-right": ["memory", "network", "pulseaudio", "battery", "custom/power"],
     // Modules configuration
@@ -47,6 +47,9 @@
     }, 
     "hyprland/window": {
       "max-length": 75
+    },
+    "river/tags": {
+        "num-tags": 9,
     },
     "keyboard-state": {
         "numlock": true,

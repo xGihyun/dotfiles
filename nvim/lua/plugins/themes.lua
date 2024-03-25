@@ -6,6 +6,17 @@ return {
     opts = {
       flavor = "mocha",
       transparent_background = false,
+      color_overrides = {
+        mocha = {
+          base = "#191724",
+        },
+      },
+      -- custom_highlights = function(colors)
+      --   return {
+      --     -- Normal = { fg = colors.text, bg = colors.transparent_background and colors.none or colors.mantle },
+      --     String = { fg = colors.flamingo },
+      --   }
+      -- end,
     },
   },
   {

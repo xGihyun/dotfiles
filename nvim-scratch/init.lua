@@ -5,6 +5,8 @@ vim.g.maplocalleader = " "
 -- See `:help vim.opt`
 --  For more options, you can see `:help option-list`
 
+vim.opt.tabstop = 2
+vim.opt.expandtab = true
 vim.opt.guicursor = ""
 vim.opt.number = true
 vim.opt.relativenumber = true

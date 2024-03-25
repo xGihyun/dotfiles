@@ -1,4 +1,5 @@
 @import "./themes/catppuccin/mocha.css";
+@import "./themes/rose-pine/main.conf";
 
 * {
   /* `otf-font-awesome` is required to be installed for icons */
@@ -144,6 +145,26 @@ window#waybar.hidden {
 
 #pulseaudio {
   color: @yellow;
+}
+
+/* River */
+#tags button {
+  padding: 0 4px;
+  margin: 0;
+  background-color: transparent;
+  color: @surface1;
+}
+
+#tags button.occupied {
+  color: @subtext1;
+}
+
+#tags button.focused {
+  color: @blue;
+}
+
+#tags button.urgent {
+  background-color: @red;
 }
 
 /**/
