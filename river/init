@@ -11,6 +11,7 @@
 # Note: the "Super" modifier is also known as Logo, GUI, Windows, Mod4, etc.
 
 riverctl spawn "~/.config/hypr/autostart.sh"
+riverctl spawn "~/.config/river/xdg.sh"
 
 # Terminal
 riverctl map normal Super Return spawn kitty

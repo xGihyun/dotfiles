@@ -1,5 +1,5 @@
 format = """
-[░▒▓](#31748f)\
+[ ](#31748f)\
 $os\
 [](bg:#9ccfd8 fg:#31748f)\
 $directory\
@@ -64,8 +64,8 @@ Unknown = " "
 Windows = "󰍲 "
 
 [character]
-success_symbol = ""
-error_symbol = ""
+success_symbol = " "
+error_symbol = " "
 
 [directory]
 style = "fg:#191724 bg:#9ccfd8"
