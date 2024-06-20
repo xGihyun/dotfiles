@@ -19,36 +19,71 @@ return {
           "html",
           "cssls",
           "jdtls",
+          "biome",
+          "gopls",
         },
       })
     end,
   },
   {
     "neovim/nvim-lspconfig",
+    opts = {
+      inlay_hints = {
+        enabled = true,
+      },
+    },
     config = function()
       local lspconfig = require("lspconfig")
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       lspconfig.lua_ls.setup({ capabilities = capabilities })
       lspconfig.rust_analyzer.setup({ capabilities = capabilities })
       lspconfig.svelte.setup({ capabilities = capabilities })
       lspconfig.tailwindcss.setup({ capabilities = capabilities })
-      lspconfig.tsserver.setup({ capabilities = capabilities })
+      lspconfig.tsserver.setup({
+        capabilities = capabilities,
+        typescript = {
+          inlayHints = {
+            includeInlayParameterNameHints = "all",
+            includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+            includeInlayFunctionParameterTypeHints = true,
+            includeInlayVariableTypeHints = true,
+            includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+            includeInlayPropertyDeclarationTypeHints = true,
+            includeInlayFunctionLikeReturnTypeHints = true,
+            includeInlayEnumMemberValueHints = true,
+          },
+        },
+        javascript = {
+          inlayHints = {
+            includeInlayParameterNameHints = "all",
+            includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+            includeInlayFunctionParameterTypeHints = true,
+            includeInlayVariableTypeHints = true,
+            includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+            includeInlayPropertyDeclarationTypeHints = true,
+            includeInlayFunctionLikeReturnTypeHints = true,
+            includeInlayEnumMemberValueHints = true,
+          },
+        },
+      })
       lspconfig.eslint.setup({ capabilities = capabilities })
       lspconfig.phpactor.setup({ capabilities = capabilities })
       lspconfig.html.setup({ capabilities = capabilities })
       lspconfig.cssls.setup({ capabilities = capabilities })
       lspconfig.jdtls.setup({ capabilities = capabilities })
-
-      vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
-      vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-      vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
-      vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
+      lspconfig.astro.setup({ capabilities = capabilities })
+      lspconfig.volar.setup({ capabilities = capabilities })
+      lspconfig.gopls.setup({ capabilities = capabilities })
+      lspconfig.biome.setup({ capabilities = capabilities })
 
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("UserLspConfig", {}),
         callback = function(ev)
-          local telescope = require("telescope.builtin");
+          local telescope = require("telescope.builtin")
+          local map = function(keys, func, desc)
+            vim.keymap.set("n", keys, func, { buffer = ev.buf, desc = "LSP: " .. desc })
+          end
 
           -- Enable completion triggered by <c-x><c-o>
           vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
@@ -56,14 +91,16 @@ return {
           -- Buffer local mappings.
           -- See `:help vim.lsp.*` for documentation on any of the below functions
           local opts = { buffer = ev.buf }
-          vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-          vim.keymap.set("n", "gd", telescope.lsp_definitions, opts)
-          vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-          vim.keymap.set("n", "gi", telescope.lsp_implementations, opts)
-          vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
-          vim.keymap.set("n", "<space>D", telescope.lsp_type_definitions, opts)
-          vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
-          vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+          map("gD", vim.lsp.buf.declaration, "[G]o to [D]eclaration")
+          map("gd", telescope.lsp_definitions, "[G]o to [D]efinition")
+          map("gr", telescope.lsp_references, "[G]o to [R]eferences")
+          map("gds", telescope.lsp_document_symbols, "[D]ocument [S]ymbols")
+          map("gws", telescope.lsp_dynamic_workspace_symbols, "[W]ocument [S]ymbols")
+          map("K", vim.lsp.buf.hover, "Hover Documentation")
+          map("gi", telescope.lsp_implementations, "[G]o to [I]mplementation")
+          -- map("<C-k>", vim.lsp.buf.signature_help, "")
+          map("<space>D", telescope.lsp_type_definitions, "")
+          map("<space>ca", vim.lsp.buf.code_action, "")
           -- vim.keymap.set("n", "<space>f", function()
           --   vim.lsp.buf.format({ async = true })
           -- end, opts)
