@@ -30,7 +30,7 @@ opt.timeoutlen = 300
 opt.splitright = true
 opt.splitbelow = true
 
-opt.conceallevel = 1
+opt.conceallevel = 2
 -- opt.autoindent = true
 opt.wrap = false
 opt.list = false

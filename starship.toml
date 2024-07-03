@@ -85,7 +85,7 @@ truncation_symbol = "…/"
 "Desktop" = "󰇄 "
 
 [git_branch]
-symbol = ""
+symbol = ""
 style = "bg:#b4befe"
 format = '[[ $symbol $branch ](fg:#313244 bg:#b4befe)]($style)'
 

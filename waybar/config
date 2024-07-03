@@ -8,7 +8,7 @@
     // Choose the order of the modules
     "modules-left": ["custom/home", "hyprland/workspaces", "river/tags"],
     "modules-center": ["clock"],
-    "modules-right": ["memory", "network", "pulseaudio", "battery", "custom/power"],
+    "modules-right": ["custom/update", "memory", "network", "pulseaudio", "battery", "custom/power"],
     // Modules configuration
     "hyprland/workspaces": {
         // "active-only": true,
@@ -99,7 +99,7 @@
     },
     "clock": {
         // "timezone": "UTC",
-        "format": "󰸗 {:%a, %b %d  󰥔 %I:%M %p}",
+        "format": "󰸗 {:%a, %b %d - 󰥔 %I:%M %p}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
@@ -187,6 +187,13 @@
     "custom/power": {
       "format": "",
       "on-click": "~/dotfiles-hyprland/rofi/scripts/power-menu.sh"
-    }
+    },
+    "custom/update": {
+        "interval" : 120,
+        "return-type" : "string",
+        "exec" : "~/.config/waybar/scripts/checkupdates.sh",
+        "tooltip" : false,
+        // "on-click" : "setsid -f kitty -e paru -Syyu"
+    },
 }
 
