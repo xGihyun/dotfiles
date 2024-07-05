@@ -2,16 +2,9 @@ return {
   {
     "hrsh7th/cmp-nvim-lsp",
   },
-  -- {
-  --   "hrsh7th/cmp-path",
-  --   config = function()
-  --     require("cmp").setup({
-  --       sources = {
-  --         { name = "path" },
-  --       },
-  --     })
-  --   end,
-  -- },
+  {
+    "hrsh7th/cmp-path",
+  },
   {
     "L3MON4D3/LuaSnip",
     dependencies = {
@@ -37,7 +30,7 @@ return {
           documentation = cmp.config.window.bordered(),
         },
         mapping = cmp.mapping.preset.insert({
-          ["<C-Space>"] = cmp.mapping.complete(),
+          ["<C-x>"] = cmp.mapping.complete(),
           ["<C-e>"] = cmp.mapping.abort(),
           ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
           ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
@@ -46,6 +39,7 @@ return {
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
           { name = "luasnip" },
+          { name = "path" },
         }, {
           { name = "buffer" },
         }),
