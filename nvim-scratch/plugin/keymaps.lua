@@ -5,10 +5,8 @@ local set = vim.keymap.set
 
 -- Ergonomic keymaps
 set("n", "<Esc>", "<cmd>nohlsearch<CR>")
-set("v", "<Tab>", "<Esc>")
 set("i", "kj", "<Esc>")
 set("i", "jk", "<Esc>")
-set("i", "<Tab>", "<Esc>")
 
 -- Tabbing in visual mode
 set("v", ">", ">gv")
