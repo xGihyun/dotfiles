@@ -1,1 +1,3 @@
-# Hyprland .dotfiles
+# dotfiles
+
+Dotfiles for my Arch Linux system.

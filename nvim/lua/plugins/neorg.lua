@@ -21,6 +21,11 @@ return {
               default_workspace = "notes",
             },
           },
+          ["core.completion"] = {
+            config = {
+              engine = "nvim-cmp"
+            }
+          }
         },
       })
 

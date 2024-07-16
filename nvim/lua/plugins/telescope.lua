@@ -21,45 +21,5 @@ return {
       vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
       vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
     end,
-  },
-  {
-    "nvim-telescope/telescope-file-browser.nvim",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
-    config = function()
-      local telescope = require("telescope")
-      local actions = require("telescope.actions")
-      local fb_actions = require("telescope").extensions.file_browser.actions
-
-      telescope.setup({
-        extensions = {
-          file_browser = {
-            theme = "dropdown",
-            hijack_netrw = true,
-            mappings = {
-              ["n"] = {
-                ["n"] = fb_actions.create,
-                ["h"] = fb_actions.goto_parent_dir,
-                ["<C-n>"] = actions.move_selection_next,
-                ["<C-p>"] = actions.move_selection_previous,
-                ["<C-u>"] = function(prompt_bufnr)
-                  for _ = 1, 10 do
-                    actions.move_selection_next(prompt_bufnr)
-                  end
-                end,
-                ["<C-d>"] = function(prompt_bufnr)
-                  for _ = 1, 10 do
-                    actions.move_selection_previous(prompt_bufnr)
-                  end
-                end,
-              },
-            },
-          },
-        },
-      })
-
-      telescope.load_extension("file_browser")
-    end,
-  },
+  }
 }

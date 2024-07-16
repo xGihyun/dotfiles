@@ -9,7 +9,6 @@ return {
         "json",
         "lua",
         "python",
-        "query",
         "php",
         "javascript",
         "typescript",
@@ -19,6 +18,7 @@ return {
         "svelte",
         "markdown",
         "markdown_inline",
+        "sql",
       },
       -- Autoinstall languages that are not installed
       auto_install = true,

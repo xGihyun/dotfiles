@@ -21,6 +21,7 @@ return {
           "jdtls",
           "biome",
           "gopls",
+          "zls",
         },
       })
     end,
