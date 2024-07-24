@@ -9,16 +9,18 @@ return {
         transparent_background = false,
         color_overrides = {
           mocha = {
-            base = "#15031d",
-            -- blue = "#ef8fc6",
+            base = "#181825",
+            -- base = "#1c1712",
+            -- base = "#231f1a",
+            -- blue = "#facf89",
+            -- lavender = "#fedcb4",
+            -- mauve = "#b8703d",
+            -- green = "#c7cceb",
+            -- text = "#f4e2cd",
             -- yellow = "#c6a0f6",
-            -- lavender = "#dab7f8",
-            -- mauve = "#c65371",
             -- sky = "#f5bde6",
             -- teal = "#8aadf4",
             -- pink = "#c6a0f6",
-            -- green = "#b7bdf8",
-            -- text = "#cad3f5",
             -- sapphire = "#ee99a0",
 
             -- lavender = "#f7a1d2",
@@ -27,7 +29,7 @@ return {
           },
         },
       })
-      vim.cmd.colorscheme("catppuccin")
+      -- vim.cmd.colorscheme("catppuccin")
     end,
   },
   {
@@ -54,7 +56,29 @@ return {
   {
     "water-sucks/darkrose.nvim",
     name = "darkrose",
-    lazy = false,
     priority = 1000,
+  },
+  {
+    "sainnhe/gruvbox-material",
+    name = "gruvbox-material",
+    priority = 1000,
+    config = function ()
+      vim.cmd.colorscheme("gruvbox-material")
+    end
+  },
+  {
+    "savq/melange-nvim",
+    name = "melange",
+    priority = 1000,
+  },
+  {
+    "loctvl842/monokai-pro.nvim",
+    name = "monokai-pro",
+    priority = 1000,
+  },
+  {
+    "ellisonleao/gruvbox.nvim",
+    name = "gruvbox",
+    priority = 1000
   }
 }
