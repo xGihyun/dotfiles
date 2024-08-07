@@ -21,8 +21,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  -- { "tpope/vim-sleuth" },
-  -- { "numToStr/Comment.nvim", opts = {} },
   {
     "lewis6991/gitsigns.nvim",
     opts = {
@@ -35,47 +33,36 @@ require("lazy").setup({
       },
     },
   },
-
-  {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("which-key").setup()
-
-      require("which-key").register({
-        ["<leader>c"] = { name = "[C]ode", _ = "which_key_ignore" },
-        ["<leader>d"] = { name = "[D]ocument", _ = "which_key_ignore" },
-        ["<leader>r"] = { name = "[R]ename", _ = "which_key_ignore" },
-        ["<leader>s"] = { name = "[S]earch", _ = "which_key_ignore" },
-        ["<leader>w"] = { name = "[W]orkspace", _ = "which_key_ignore" },
-      })
-    end,
-  },
-
   { "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" }, opts = { signs = false } },
   { import = "plugins" },
 })
 
--- NOTE: Testing LSP, delete later
-local client = vim.lsp.start_client {
-  name = "batolsp",
-  cmd = { "/home/gihyun/Documents/Programming/Go/bato-lsp/main" }
-}
-
-if not client then
-  vim.notify("Client did not work")
-  return
-end
-
-vim.filetype.add {
+vim.filetype.add({
   extension = {
-    bt = "bato"
-  }
-}
-
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "bato",
-  callback = function()
-    vim.lsp.buf_attach_client(0, client)
-  end,
+    ['http'] = 'http',
+  },
 })
+
+-- -- NOTE: Testing LSP, delete later
+-- local client = vim.lsp.start_client {
+--   name = "batolsp",
+--   cmd = { "/home/gihyun/Documents/Programming/Go/bato-lsp/main" }
+-- }
+--
+-- if not client then
+--   vim.notify("Client did not work")
+--   return
+-- end
+--
+-- vim.filetype.add {
+--   extension = {
+--     bt = "bato"
+--   }
+-- }
+--
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "bato",
+--   callback = function()
+--     vim.lsp.buf_attach_client(0, client)
+--   end,
+-- })

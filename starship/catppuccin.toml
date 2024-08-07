@@ -77,15 +77,15 @@ truncation_symbol = "…/"
 
 [directory.substitutions]
 "Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = " "
+"Downloads" = "󰇚 "
+"Music" = "󰝚 "
 "Pictures" = " "
 "Games" = "󰊗 "
 "Videos" = "󱜏 "
 "Desktop" = "󰇄 "
 
 [git_branch]
-symbol = ""
+symbol = ""
 style = "bg:#b4befe"
 format = '[[ $symbol $branch ](fg:#313244 bg:#b4befe)]($style)'
 
@@ -115,6 +115,6 @@ format = '[[ $symbol ($version) ](fg:#89b4fa bg:#45475a)]($style)'
 
 [time]
 disabled = false
-time_format = "%R" # Hour:Minute Format
+time_format = "%R"                                      # Hour:Minute Format
 style = "bg:#313244"
 format = '[[  $time ](fg:#b4befe bg:#313244)]($style)'

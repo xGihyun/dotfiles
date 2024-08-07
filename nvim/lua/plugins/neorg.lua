@@ -13,10 +13,11 @@ return {
         load = {
           ["core.defaults"] = {},
           ["core.concealer"] = {},
+          ["core.export"] = {},
           ["core.dirman"] = {
             config = {
               workspaces = {
-                notes = "~/Documents/Notes",
+                notes = "~/Documents/Notes/neorg",
               },
               default_workspace = "notes",
             },
@@ -33,4 +34,7 @@ return {
       vim.wo.conceallevel = 2
     end,
   },
+  {
+    "preservim/vim-pencil",
+  }
 }
