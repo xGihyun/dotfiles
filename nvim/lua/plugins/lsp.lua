@@ -39,6 +39,8 @@ return {
       local lspconfig = require("lspconfig")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+      lspconfig.clangd.setup({ capabilities = capabilities })
+      lspconfig.csharp_ls.setup({ capabilities = capabilities })
       lspconfig.ruby_lsp.setup({ capabilities = capabilities })
       lspconfig.zls.setup({ capabilities = capabilities })
       lspconfig.gleam.setup({ capabilities = capabilities })
