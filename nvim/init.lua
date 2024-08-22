@@ -46,7 +46,7 @@ vim.filetype.add({
 -- -- NOTE: Testing LSP, delete later
 -- local client = vim.lsp.start_client {
 --   name = "batolsp",
---   cmd = { "/home/gihyun/Documents/Programming/Go/bato-lsp/main" }
+--   cmd = { "/home/gihyun/Development/go/bato-lsp/main" }
 -- }
 --
 -- if not client then

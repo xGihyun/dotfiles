@@ -9,23 +9,60 @@ return {
         transparent_background = false,
         color_overrides = {
           mocha = {
-            base = "#181825",
-            -- base = "#1c1712",
-            -- base = "#231f1a",
-            -- blue = "#facf89",
-            -- lavender = "#fedcb4",
-            -- mauve = "#b8703d",
-            -- green = "#c7cceb",
-            -- text = "#f4e2cd",
-            -- yellow = "#c6a0f6",
-            -- sky = "#f5bde6",
-            -- teal = "#8aadf4",
-            -- pink = "#c6a0f6",
-            -- sapphire = "#ee99a0",
+            -- Gruvbox Material (Medium)
+            -- crust = "#1b1b1b",
+            -- mantle = "#1b1b1b",
+            -- base = "#1b1b1b",
+            -- surface0 = "#282828",
+            -- surface1 = "#32302f",
+            -- surface2 = "#45403d",
+            -- overlay0 = "#7c6f64",
+            -- overlay1 = "#928364",
+            -- overlay2 = "#a89984",
+            -- subtext0 = "#d4be98",
+            -- subtext1 = "#d4be98",
+            -- text = "#ddc7a1",
+            -- lavender = "#7daea3",
+            -- blue = "#7daea3",
+            -- sapphire = "#7daea3",
+            -- sky = "#7daea3",
+            -- teal = "#89b482",
+            -- green = "#a9b665",
+            -- yellow = "#d8a657",
+            -- peach = "#e78a4e",
+            -- maroon = "#ea6962",
+            -- red = "#ea6962",
+            -- mauve = "#ea6962",
+            -- flamingo = "#a89984",
+            -- rosewater = "#a89984",
 
-            -- lavender = "#f7a1d2",
-            -- teal = "#eb7aba",
-            -- maroon = "#f5a97f"
+
+            -- Gruvbox Material (Hard)
+            -- crust = "#141617",
+            -- mantle = "#1d2021",
+            -- base = "#1d2021",
+            -- surface0 = "#282828",
+            -- surface1 = "#3c3836",
+            -- surface2 = "#504945",
+            -- overlay0 = "#7c6f64",
+            -- overlay1 = "#928364",
+            -- overlay2 = "#a89984",
+            -- subtext0 = "#d4be98",
+            -- subtext1 = "#d4be98",
+            -- text = "#ddc7a1",
+            -- lavender = "#7daea3",
+            -- blue = "#7daea3",
+            -- sapphire = "#7daea3",
+            -- sky = "#7daea3",
+            -- teal = "#89b482",
+            -- green = "#a9b665",
+            -- yellow = "#d8a657",
+            -- peach = "#e78a4e",
+            -- maroon = "#ea6962",
+            -- red = "#ea6962",
+            -- mauve = "#ea6962",
+            -- flamingo = "#a89984",
+            -- rosewater = "#a89984",
           },
         },
       })
@@ -54,15 +91,10 @@ return {
     priority = 1000
   },
   {
-    "water-sucks/darkrose.nvim",
-    name = "darkrose",
-    priority = 1000,
-  },
-  {
     "sainnhe/gruvbox-material",
     name = "gruvbox-material",
     priority = 1000,
-    config = function ()
+    config = function()
       vim.cmd.colorscheme("gruvbox-material")
     end
   },
@@ -75,10 +107,5 @@ return {
     "loctvl842/monokai-pro.nvim",
     name = "monokai-pro",
     priority = 1000,
-  },
-  {
-    "ellisonleao/gruvbox.nvim",
-    name = "gruvbox",
-    priority = 1000
   }
 }

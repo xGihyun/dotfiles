@@ -23,6 +23,10 @@ return {
           "gopls",
           "zls",
           "astro",
+          "pylsp",
+          "ruff",
+          "ruff_lsp",
+          "biome",
         },
       })
     end,
@@ -39,6 +43,9 @@ return {
       local lspconfig = require("lspconfig")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+      lspconfig.pylsp.setup({ capabilities = capabilities })
+      lspconfig.ruff.setup({ capabilities = capabilities })
+      lspconfig.ruff_lsp.setup({ capabilities = capabilities })
       lspconfig.clangd.setup({ capabilities = capabilities })
       lspconfig.csharp_ls.setup({ capabilities = capabilities })
       lspconfig.ruby_lsp.setup({ capabilities = capabilities })
