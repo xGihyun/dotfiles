@@ -68,6 +68,10 @@ return {
           name = "academics",
           path = "~/Documents/Notes/academics",
         },
+        {
+          name = "leetcode",
+          path = "~/Documents/Notes/leetcode",
+        },
       },
       -- ui = {
       --   enable = false
