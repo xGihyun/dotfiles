@@ -17,7 +17,7 @@ riverctl spawn "~/.config/river/xdg.sh"
 riverctl map normal Super Return spawn kitty
 
 # Browser
-riverctl map normal Super B spawn floorp
+riverctl map normal Super B spawn zen-browser
 
 # File manager (Temporary)
 riverctl map normal Super E spawn nemo
@@ -152,9 +152,9 @@ riverctl map normal Super F11 enter-mode passthrough
 riverctl map passthrough Super F11 enter-mode normal
 
 # Set background and border color
-riverctl background-color 0xff31748f
-riverctl border-color-focused 0xebbcba
-riverctl border-color-unfocused 0x6e6a86
+riverctl background-color 0xffffff
+riverctl border-color-focused 0xe78a4eBF
+riverctl border-color-unfocused 0x32302f
 # riverctl border-color-urgent 0xffeb6f92
 # riverctl border-width 4
 

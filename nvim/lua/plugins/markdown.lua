@@ -15,30 +15,30 @@ return {
   --     "nvim-tree/nvim-web-devicons"
   --   },
   -- },
-  -- {
-  --   'MeanderingProgrammer/render-markdown.nvim',
-  --   name = 'render-markdown',
-  --   opts = {
-  --     latex = {
-  --       enabled = true,
-  --       converter = 'latex2text',
-  --       highlight = 'RenderMarkdownMath',
-  --       top_pad = 0,
-  --       bottom_pad = 0,
-  --     },
-  --   },
-  --   dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
-  --   -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
-  -- },
-  -- {
-  --   'renerocksai/telekasten.nvim',
-  --   config = function()
-  --     require('telekasten').setup({
-  --       home = vim.fn.expand("~/Documents/Notes/zettelkasten"),
-  --     })
-  --   end,
-  --   dependencies = { 'nvim-telescope/telescope.nvim', "nvim-telekasten/calendar-vim" }
-  -- },
+  {
+    'MeanderingProgrammer/render-markdown.nvim',
+    name = 'render-markdown',
+    opts = {
+      latex = {
+        enabled = true,
+        converter = 'latex2text',
+        highlight = 'RenderMarkdownMath',
+        top_pad = 0,
+        bottom_pad = 0,
+      },
+    },
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+  },
+  {
+    'renerocksai/telekasten.nvim',
+    config = function()
+      require('telekasten').setup({
+        home = vim.fn.expand("~/Documents/Notes/zettelkasten"),
+      })
+    end,
+    dependencies = { 'nvim-telescope/telescope.nvim', "nvim-telekasten/calendar-vim" }
+  },
   {
     "epwalsh/obsidian.nvim",
     version = "*", -- recommended, use latest release instead of latest commit
@@ -73,9 +73,9 @@ return {
           path = "~/Documents/Notes/leetcode",
         },
       },
-      -- ui = {
-      --   enable = false
-      -- },
+      ui = {
+        enable = false
+      },
 
       -- see below for full list of options 👇
     },

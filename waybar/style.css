@@ -165,18 +165,18 @@ window#waybar.hidden {
 
 /* River */
 #tags button {
-  padding: 0 4px;
+  padding: 0 2px;
   margin: 0;
   background-color: transparent;
   color: @surface1;
 }
 
 #tags button.occupied {
-  color: @subtext1;
+  color: @subtext0;
 }
 
 #tags button.focused {
-  color: @blue;
+  color: @text;
 }
 
 #tags button.urgent {

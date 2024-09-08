@@ -146,6 +146,46 @@
   (
     value: "(ᓀ‸ᓂ)",
     description: "Angry"
-  )
+  ),
+  (
+    value: "─=≡Σ((( つ＞＜)つ",
+    description: "Run"
+  ),
+  (
+    value: "(ﾒ￣▽￣)︻┳═一",
+    description: "Gun"
+  ),
+  (
+    value: "(ﾒ` ﾛ ´)︻デ═一",
+    description: "Gun"
+  ),
+  (
+    value: "(ಠ o ಠ)¤=[]:::::>",
+    description: "Sword"
+  ),
+  (
+    value: "(ﾉ≧∀≦)ﾉ ‥…━━━★",
+    description: "Magic"
+  ),
+  (
+    value: "(oT-T)尸",
+    description: "Surrender"
+  ),
+  (
+    value: "∠( ᐛ 」∠)_",
+    description: "Lying"
+  ),
+  (
+    value: "ଘ(੭ˊᵕˋ)੭* ੈ✩‧₊˚",
+    description: "Angel"
+  ),
+  (
+    value: "ଘ(੭ˊ꒳ˋ)੭✧",
+    description: "Angel"
+  ),
+  (
+    value: "ଘ(੭ˊ꒳ˋ)੭♡",
+    description: "Angel"
+  ),
 ]
 
