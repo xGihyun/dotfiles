@@ -1,37 +1,4 @@
 return {
-  -- {
-  --     "williamboman/mason.nvim",
-  --     config = function()
-  --         require("mason").setup()
-  --     end,
-  -- },
-  -- {
-  --     "williamboman/mason-lspconfig.nvim",
-  --     config = function()
-  --         require("mason-lspconfig").setup({
-  --             ensure_installed = {
-  --                 "lua_ls",
-  --                 "rust_analyzer",
-  --                 "svelte",
-  --                 "tailwindcss",
-  --                 "tsserver",
-  --                 -- "ts_ls",
-  --                 "eslint",
-  --                 "html",
-  --                 "cssls",
-  --                 "jdtls",
-  --                 "biome",
-  --                 "gopls",
-  --                 "zls",
-  --                 "astro",
-  --                 "pylsp",
-  --                 "ruff",
-  --                 "ruff_lsp",
-  --                 "biome",
-  --             },
-  --         })
-  --     end,
-  -- },
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -39,33 +6,6 @@ return {
       "williamboman/mason-lspconfig.nvim",
     },
     config = function()
-      -- local lspconfig = require("lspconfig")
-      -- local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      --
-      -- lspconfig.pylsp.setup({ capabilities = capabilities })
-      -- lspconfig.ruff.setup({ capabilities = capabilities })
-      -- lspconfig.ruff_lsp.setup({ capabilities = capabilities })
-      -- lspconfig.clangd.setup({ capabilities = capabilities })
-      -- lspconfig.csharp_ls.setup({ capabilities = capabilities })
-      -- lspconfig.ruby_lsp.setup({ capabilities = capabilities })
-      -- lspconfig.zls.setup({ capabilities = capabilities })
-      -- lspconfig.gleam.setup({ capabilities = capabilities })
-      -- lspconfig.lua_ls.setup({ capabilities = capabilities })
-      -- lspconfig.rust_analyzer.setup({ capabilities = capabilities })
-      -- lspconfig.svelte.setup({ capabilities = capabilities })
-      -- lspconfig.tailwindcss.setup({ capabilities = capabilities })
-      -- lspconfig.ts_ls.setup({ capabilities = capabilities })
-      -- lspconfig.eslint.setup({ capabilities = capabilities })
-      -- lspconfig.phpactor.setup({ capabilities = capabilities })
-      -- lspconfig.html.setup({ capabilities = capabilities })
-      -- lspconfig.cssls.setup({ capabilities = capabilities })
-      -- lspconfig.jdtls.setup({ capabilities = capabilities })
-      -- lspconfig.astro.setup({ capabilities = capabilities })
-      -- lspconfig.volar.setup({ capabilities = capabilities })
-      -- lspconfig.gopls.setup({ capabilities = capabilities })
-      -- lspconfig.biome.setup({ capabilities = capabilities })
-      -- lspconfig.marksman.setup({ capabilities = capabilities })
-
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
@@ -99,7 +39,7 @@ return {
 
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        "stylua", -- Used to format Lua code
+        "stylua",
       })
 
       require("mason-lspconfig").setup({
@@ -130,12 +70,9 @@ return {
             vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
           end
 
-          -- Enable completion triggered by <c-x><c-o>
-          -- vim.bo[event.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
-
           -- Buffer local mappings.
           -- See `:help vim.lsp.*` for documentation on any of the below functions
-          local opts = { buffer = event.buf }
+
           map("gD", vim.lsp.buf.declaration, "[G]o to [D]eclaration")
           map("gd", telescope.lsp_definitions, "[G]o to [D]efinition")
           map("gr", telescope.lsp_references, "[G]o to [R]eferences")
@@ -143,18 +80,19 @@ return {
           map("gws", telescope.lsp_dynamic_workspace_symbols, "[W]ocument [S]ymbols")
           map("K", vim.lsp.buf.hover, "Hover Documentation")
           map("gi", telescope.lsp_implementations, "[G]o to [I]mplementation")
-          -- map("<C-k>", vim.lsp.buf.signature_help, "")
+          -- map("<C-K>", vim.lsp.buf.signature_help, "")
           map("<space>D", telescope.lsp_type_definitions, "")
           map("<space>ca", vim.lsp.buf.code_action, "")
 
-          -- The following two autocommands are used to highlight references of the
-          -- word under the cursor when the cursor rests there for a little while.
+          -- Highlight references of the word under the cursor
+          -- when it rests there for a little while.
           --    See `:help CursorHold` for information about when this is executed
-          --
-          -- When the cursor is moved, the highlights will be cleared (the second autocommand).
+
           local client = vim.lsp.get_client_by_id(event.data.client_id)
+
           if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
             local highlight_augroup = vim.api.nvim_create_augroup("lsp-highlight", { clear = false })
+
             vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
               buffer = event.buf,
               group = highlight_augroup,
