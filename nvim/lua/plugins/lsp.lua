@@ -46,7 +46,7 @@ return {
         ensure_installed = ensure_installed,
         handlers = {
           function(server_name)
-            -- "tsserver" will be depracted, so change it to "ts_ls" until it gets updated
+            -- WARN: "tsserver" will be depracted, so change it to "ts_ls" until it gets updated
             if server_name == "tsserver" then
               server_name = "ts_ls"
             end
@@ -69,9 +69,6 @@ return {
             mode = mode or "n"
             vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
           end
-
-          -- Buffer local mappings.
-          -- See `:help vim.lsp.*` for documentation on any of the below functions
 
           map("gD", vim.lsp.buf.declaration, "[G]o to [D]eclaration")
           map("gd", telescope.lsp_definitions, "[G]o to [D]efinition")

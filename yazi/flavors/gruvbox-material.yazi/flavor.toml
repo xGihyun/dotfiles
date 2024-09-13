@@ -1,0 +1,145 @@
+# vim:fileencoding=utf-8:foldmethod=marker
+
+# : Manager {{{
+
+[manager]
+cwd = { fg = "#d8a657" }
+
+# Hovered
+hovered = { fg = "#282828", bg = "#d8a657" }
+preview_hovered = { underline = true }
+
+# Find
+find_keyword = { fg = "#f6c177", italic = true }
+find_position = { fg = "#eb6f92", bg = "reset", italic = true }
+
+# Marker
+marker_selected = { fg = "#7daea3", bg = "#7daea3" }
+marker_copied = { fg = "#89b482", bg = "#89b482" }
+marker_cut = { fg = "#d3869b", bg = "#d3869b" }
+
+# Tab
+tab_active = { fg = "#e0def4", bg = "#191724" }
+tab_inactive = { fg = "#e0def4", bg = "#2A273F" }
+tab_width = 1
+
+# Border
+border_symbol = "│"
+border_style = { fg = "#5a524c" }
+
+# Highlighting
+# syntect_theme = "~/.config/yazi/gruvbox-material.tmTheme"
+
+# : }}}
+
+
+# : Status {{{
+
+[status]
+separator_open = ""
+separator_close = ""
+separator_style = { fg = "#45403d", bg = "#45403d" }
+
+# Mode
+mode_normal = { fg = "#282828", bg = "#e78a4e", bold = true }
+mode_select = { fg = "#ddc7a1", bg = "#374141", bold = true }
+mode_unset = { fg = "#ddc7a1", bg = "#d3869b", bold = true }
+
+# Progress
+progress_label = { fg = "#ddc7a1", bold = true }
+progress_normal = { fg = "#191724", bg = "#282828" }
+progress_error = { fg = "#ea6962", bg = "#282828" }
+
+# Permissions
+permissions_t = { fg = "#7daea3" }
+permissions_r = { fg = "#d8a657" }
+permissions_w = { fg = "#d3869b" }
+permissions_x = { fg = "#89b482" }
+permissions_s = { fg = "#d4be98" }
+
+# : }}}
+
+
+# : Input {{{
+
+[input]
+border = { fg = "#5a524c" }
+title = {}
+value = {}
+selected = { reversed = true }
+
+# : }}}
+
+
+# : Select {{{
+
+[select]
+border = { fg = "#5a524c" }
+active = { fg = "#eb6f92" }
+inactive = {}
+
+# : }}}
+
+
+# : Tasks {{{
+
+[tasks]
+border = { fg = "#5a524c" }
+title = {}
+hovered = { underline = true }
+
+# : }}}
+
+
+# : Which {{{
+
+[which]
+mask = { bg = "#313244" }
+cand = { fg = "#9ccfd8" }
+rest = { fg = "#9399b2" }
+desc = { fg = "#eb6f92" }
+separator = "  "
+separator_style = { fg = "#585b70" }
+
+# : }}}
+
+
+# : Help {{{
+
+[help]
+on = { fg = "#eb6f92" }
+exec = { fg = "#9ccfd8" }
+desc = { fg = "#9399b2" }
+hovered = { bg = "#585b70", bold = true }
+footer = { fg = "#2A273F", bg = "#e0def4" }
+
+# : }}}
+
+
+# : File-specific styles {{{
+
+[filetype]
+
+rules = [
+    # Images
+    { mime = "image/*", fg = "#7daea3" },
+
+    # Videos
+    { mime = "video/*", fg = "#d8a657" },
+    { mime = "audio/*", fg = "#d8a657" },
+
+    # Archives
+    { mime = "application/zip", fg = "#d3869b" },
+    { mime = "application/gzip", fg = "#d3869b" },
+    { mime = "application/x-tar", fg = "#d3869b" },
+    { mime = "application/x-bzip", fg = "#d3869b" },
+    { mime = "application/x-bzip2", fg = "#d3869b" },
+    { mime = "application/x-7z-compressed", fg = "#d3869b" },
+    { mime = "application/x-rar", fg = "#d3869b" },
+
+    # Fallback
+    { name = "*", fg = "#ddc7a1" },
+    { name = "*/", fg = "#a89984" },
+]
+
+# : }}}

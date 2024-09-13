@@ -158,6 +158,10 @@ riverctl border-color-unfocused 0x32302f
 # riverctl border-color-urgent 0xffeb6f92
 # riverctl border-width 4
 
+# Add server-side decorations
+# Applies borders to firefox-based browsers
+riverctl rule-add ssd
+
 # Set keyboard repeat rate
 riverctl set-repeat 50 300
 
