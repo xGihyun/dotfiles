@@ -34,6 +34,19 @@ auto-format = true
 name = "php"
 auto-format = true
 
+[language-server.astro-ls]
+command = "astro-ls"
+args = [ "--stdio" ]
+
+[[language]]
+name = "astro"
+scope = "source.astro"
+injection-regex = "astro"
+auto-format = true
+file-types = ["astro"]
+roots = ["package.json", "astro.config.mjs"]
+language-servers = ["astro-ls"]
+
 
 [language-server.rust-analyzer.config]
 inlayHints.bindingModeHints.enable = false

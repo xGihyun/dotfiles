@@ -63,7 +63,7 @@ return {
         typescriptreact = { "prettierd", "prettier", "biome", stop_after_first = true },
         markdown = { "prettierd", "prettier", "biome", stop_after_first = true },
         json = { "prettierd", "prettier", "biome", stop_after_first = true },
-        astro = { "prettierd", "prettier", "biome", stop_after_first = true },
+        astro = { "prettier", stop_after_first = true },
         svelte = { "prettier", "prettierd", "biome", stop_after_first = true },
       },
     },

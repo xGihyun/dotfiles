@@ -1,4 +1,8 @@
 return {
+  -- {
+  --   "neoclide/coc.nvim",
+  --   branch = "release",
+  -- },
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -14,22 +18,17 @@ return {
         ruff = {},
         ruff_lsp = {},
         clangd = {},
-        csharp_ls = {},
         ruby_lsp = {},
         zls = {},
-        gleam = {},
         lua_ls = {},
         rust_analyzer = {},
         svelte = {},
         tailwindcss = {},
         ts_ls = {},
         eslint = {},
-        phpactor = {},
         html = {},
         cssls = {},
-        jdtls = {},
         astro = {},
-        volar = {},
         gopls = {},
         biome = {},
         marksman = {},
@@ -46,9 +45,9 @@ return {
         ensure_installed = ensure_installed,
         handlers = {
           function(server_name)
-            -- WARN: "tsserver" will be depracted, so change it to "ts_ls" until it gets updated
-            if server_name == "tsserver" then
-              server_name = "ts_ls"
+            -- NOTE: Don't setup `ts_ls`, use `typescript-tools.nvim` instead
+            if server_name == "ts_ls" then
+              return
             end
 
             local server = servers[server_name] or {}
@@ -120,5 +119,10 @@ return {
         end,
       })
     end,
+  },
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    opts = {},
   },
 }
