@@ -98,14 +98,4 @@ return {
       vim.cmd.colorscheme("gruvbox-material")
     end
   },
-  {
-    "savq/melange-nvim",
-    name = "melange",
-    priority = 1000,
-  },
-  {
-    "loctvl842/monokai-pro.nvim",
-    name = "monokai-pro",
-    priority = 1000,
-  }
 }

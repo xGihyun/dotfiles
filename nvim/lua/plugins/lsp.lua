@@ -8,6 +8,7 @@ return {
     dependencies = {
       { "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
       "williamboman/mason-lspconfig.nvim",
+      "hrsh7th/cmp-nvim-lsp",
     },
     config = function()
       local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -29,7 +30,9 @@ return {
         html = {},
         cssls = {},
         astro = {},
-        gopls = {},
+        gopls = {
+          gofumpt = true,
+        },
         biome = {},
         marksman = {},
       }
@@ -124,5 +127,9 @@ return {
     "pmizio/typescript-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
     opts = {},
+  },
+  {
+    "mfussenegger/nvim-jdtls",
+    ft = "java",
   },
 }

@@ -14,6 +14,14 @@ return {
         group = "[C]ode"
       },
       {
+        "<leader>n",
+        group = "[N]otes"
+      },
+      {
+        "<leader>m",
+        group = "[M]arkdown render"
+      },
+      {
         "<leader>d",
         group = "[D]ocument"
       },
