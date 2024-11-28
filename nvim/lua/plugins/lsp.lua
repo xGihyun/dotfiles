@@ -4,11 +4,13 @@ return {
     dependencies = {
       { "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
       "williamboman/mason-lspconfig.nvim",
-      "hrsh7th/cmp-nvim-lsp",
+      -- "hrsh7th/cmp-nvim-lsp",
+      "saghen/blink.cmp",
     },
     config = function()
       local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+      -- capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+      capabilities = vim.tbl_deep_extend("force", capabilities, require("blink.cmp").get_lsp_capabilities(capabilities))
 
       local servers = {
         pylsp = {},
@@ -20,9 +22,9 @@ return {
         svelte = {
           capabilities = {
             workspace = {
-              didChangeWatchedFiles = false
-            }
-          }
+              didChangeWatchedFiles = false,
+            },
+          },
         },
         tailwindcss = {},
         -- ts_ls = {},
@@ -40,9 +42,9 @@ return {
       require("mason").setup()
 
       local ensure_installed = vim.tbl_keys(servers or {})
-      vim.list_extend(ensure_installed, {
-        "stylua",
-      })
+      -- vim.list_extend(ensure_installed, {
+      --   "stylua",
+      -- })
 
       require("mason-lspconfig").setup({
         ensure_installed = ensure_installed,
