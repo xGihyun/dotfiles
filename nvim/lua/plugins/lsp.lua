@@ -1,8 +1,4 @@
 return {
-  -- {
-  --   "neoclide/coc.nvim",
-  --   branch = "release",
-  -- },
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -17,15 +13,19 @@ return {
       local servers = {
         pylsp = {},
         ruff = {},
-        ruff_lsp = {},
         clangd = {},
-        ruby_lsp = {},
         zls = {},
         lua_ls = {},
         rust_analyzer = {},
-        svelte = {},
+        svelte = {
+          capabilities = {
+            workspace = {
+              didChangeWatchedFiles = false
+            }
+          }
+        },
         tailwindcss = {},
-        ts_ls = {},
+        -- ts_ls = {},
         eslint = {},
         html = {},
         cssls = {},

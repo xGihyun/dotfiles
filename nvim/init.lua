@@ -21,7 +21,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  { "tpope/vim-sleuth" },
+  -- { "tpope/vim-sleuth" },
   {
     "lewis6991/gitsigns.nvim",
     opts = {
