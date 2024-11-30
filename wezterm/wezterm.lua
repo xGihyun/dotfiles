@@ -6,7 +6,7 @@ config.enable_tab_bar = false
 
 config.color_scheme = 'Gruvbox Material (Gogh)'
 
-config.font = wezterm.font("JetBrainsMono")
+config.font = wezterm.font("Iosevka")
 
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = "AlwaysPrompt"

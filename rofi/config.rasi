@@ -13,4 +13,4 @@ configuration{
     sidebar-mode: true;
 }
 
-@theme "/home/gihyun/.config/rofi/themes/catppuccin.rasi"
+@theme "/home/gihyun/.config/rofi/themes/gruvbox-material.rasi"
