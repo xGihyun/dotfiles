@@ -2,6 +2,7 @@ return {
   {
     "saghen/blink.cmp",
     lazy = false,
+    event = "InsertEnter",
     -- optional: provides snippets for the snippet source
     dependencies = {
       "L3MON4D3/LuaSnip",
@@ -34,22 +35,28 @@ return {
         completion = {
           enabled_providers = { "lsp", "path", "snippets", "buffer" },
         },
-      },
-
-      trigger = {
-        completion = {
-          show_on_insert_on_trigger_character = false,
+        providers = {
+          lsp = {
+            min_keyword_length = 1,
+          },
         },
       },
-
-      windows = {
-        autocomplete = {
-          border = "single",
+      completion = {
+        trigger = {
+          show_on_insert_on_trigger_character = false,
         },
         documentation = {
           auto_show = true,
-          border = "single",
           auto_show_delay_ms = 250,
+          window = {
+            border = "single",
+          },
+        },
+        menu = {
+          border = "single",
+        },
+        list = {
+          selection = "preselect",
         },
       },
     },

@@ -4,7 +4,6 @@ return {
     dependencies = {
       { "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
       "williamboman/mason-lspconfig.nvim",
-      -- "hrsh7th/cmp-nvim-lsp",
       "saghen/blink.cmp",
     },
     config = function()
@@ -19,11 +18,11 @@ return {
         lua_ls = {},
         rust_analyzer = {},
         svelte = {
-          capabilities = {
-            workspace = {
-              didChangeWatchedFiles = false,
-            },
-          },
+          -- capabilities = {
+          --   workspace = {
+          --     didChangeWatchedFiles = false,
+          --   },
+          -- },
         },
         tailwindcss = {},
         -- ts_ls = {},
@@ -41,9 +40,6 @@ return {
       require("mason").setup()
 
       local ensure_installed = vim.tbl_keys(servers or {})
-      -- vim.list_extend(ensure_installed, {
-      --   "stylua",
-      -- })
 
       require("mason-lspconfig").setup({
         ensure_installed = ensure_installed,
@@ -65,7 +61,7 @@ return {
       })
 
       vim.api.nvim_create_autocmd("LspAttach", {
-        group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+        group = vim.api.nvim_create_augroup("lsp-attach", {}),
         callback = function(event)
           local telescope = require("telescope.builtin")
           local map = function(keys, func, desc, mode)
@@ -90,6 +86,17 @@ return {
 
           local client = vim.lsp.get_client_by_id(event.data.client_id)
 
+          if client.name == "svelte" then
+            vim.api.nvim_create_autocmd("BufWritePost", {
+              pattern = { "*.js", "*.ts" },
+              group = vim.api.nvim_create_augroup("svelte-on-did-change-ts-or-js-file", { clear = true }),
+              callback = function(ctx)
+                -- Here use ctx.match instead of ctx.file
+                client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
+              end,
+            })
+          end
+
           if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
             local highlight_augroup = vim.api.nvim_create_augroup("lsp-highlight", { clear = false })
 
@@ -106,7 +113,7 @@ return {
             })
 
             vim.api.nvim_create_autocmd("LspDetach", {
-              group = vim.api.nvim_create_augroup("kickstart-lsp-detach", { clear = true }),
+              group = vim.api.nvim_create_augroup("lsp-detach", { clear = true }),
               callback = function(event2)
                 vim.lsp.buf.clear_references()
                 vim.api.nvim_clear_autocmds({ group = "lsp-highlight", buffer = event2.buf })

@@ -104,9 +104,9 @@
         "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
-        // "format": "󰻠 {usage}%",
-        "format": "{icon} {usage}%",
-        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+        "format": "󰻠 {usage}%",
+        // "format": "{icon} {usage}%",
+        // "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
         "tooltip": false
     },
     "memory": {

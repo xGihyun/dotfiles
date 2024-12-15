@@ -36,7 +36,6 @@ return {
             -- flamingo = "#a89984",
             -- rosewater = "#a89984",
 
-
             -- Gruvbox Material (Hard)
             -- crust = "#141617",
             -- mantle = "#1d2021",
@@ -73,29 +72,37 @@ return {
     "rebelot/kanagawa.nvim",
     name = "kanagawa",
     priority = 1000,
-    opts = {
-      colors = {
-        theme = {
-          all = {
-            ui = {
-              bg_gutter = "none"
-            }
-          }
-        }
-      }
-    }
+    config = function()
+      require("kanagawa").setup({
+        colors = {
+          -- palette = {
+          --   sumiInk0 = "#141617",
+          --   sumiInk3 = "#1b1b1b",
+          -- },
+          theme = {
+            all = {
+              ui = {
+                bg_gutter = "none",
+              },
+            },
+          },
+        },
+      })
+      -- vim.cmd.colorscheme("kanagawa")
+    end,
   },
   {
     "rose-pine/neovim",
     name = "rose-pine",
-    priority = 1000
+    priority = 1000,
   },
   {
     "sainnhe/gruvbox-material",
     name = "gruvbox-material",
     priority = 1000,
     config = function()
+      vim.g.gruvbox_material_diagnostic_virtual_text = "colored"
       vim.cmd.colorscheme("gruvbox-material")
-    end
+    end,
   },
 }

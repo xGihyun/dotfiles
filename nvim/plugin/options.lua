@@ -11,8 +11,6 @@ opt.tabstop = 4
 opt.softtabstop = 4
 opt.shiftwidth = 4
 opt.expandtab = true
-opt.textwidth = 80
--- opt.smartindent = true
 
 opt.number = true
 opt.relativenumber = true

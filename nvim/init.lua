@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.g["pencil#conceallevel"] = 1
+-- vim.g["pencil#conceallevel"] = 1
 
 -- [[ Basic Autocommands ]]
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -30,27 +30,3 @@ vim.filetype.add({
     ["http"] = "http",
   },
 })
-
--- -- NOTE: Testing LSP, delete later
--- local client = vim.lsp.start_client {
---   name = "batolsp",
---   cmd = { "/home/gihyun/Development/go/bato-lsp/main" }
--- }
---
--- if not client then
---   vim.notify("Client did not work")
---   return
--- end
---
--- vim.filetype.add {
---   extension = {
---     bt = "bato"
---   }
--- }
---
--- vim.api.nvim_create_autocmd("FileType", {
---   pattern = "bato",
---   callback = function()
---     vim.lsp.buf_attach_client(0, client)
---   end,
--- })

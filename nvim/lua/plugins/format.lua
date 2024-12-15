@@ -10,7 +10,7 @@ return {
           require("conform").format({
             async = false,
             lsp_format = "fallback",
-            timeout_ms = 3000,
+            timeout_ms = 1000,
           })
         end,
         mode = { "n", "v" },
@@ -22,10 +22,10 @@ return {
       formatters_by_ft = {
         injected = { options = { ignore_errors = true } },
         lua = { "stylua" },
-        -- python = { "ruff_format", "ruff_fix", "ruff_organize_imports" },
-        javascript = { "prettierd", "prettier", "biome", stop_after_first = true },
+        python = { "ruff_format" },
+        javascript = { "prettierd", "biome", "prettier", stop_after_first = true },
         typescript = { "prettierd", "biome", "prettier", stop_after_first = true },
-        typescriptreact = { "prettierd", "prettier", "biome", stop_after_first = true },
+        typescriptreact = { "prettierd", "biome", "prettier", stop_after_first = true },
         markdown = { "prettier", "prettierd", "biome", stop_after_first = true },
         json = { "prettier", "prettierd", "biome", stop_after_first = true },
         astro = { "prettier", "prettierd", "biome", stop_after_first = true },
