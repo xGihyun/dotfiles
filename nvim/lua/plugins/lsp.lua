@@ -31,7 +31,10 @@ return {
         cssls = {},
         astro = {},
         gopls = {
-          gofumpt = true,
+          cmd_env = { GOFUMPT_SPLIT_LONG_LINES = "on" },
+          settings = {
+            gofumpt = true,
+          },
         },
         biome = {},
         marksman = {},
