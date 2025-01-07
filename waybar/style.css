@@ -2,64 +2,57 @@
 /*@import "./themes/rose-pine/main.conf";*/
 
 * {
-  /* `otf-font-awesome` is required to be installed for icons */
-  font-family: JetBrainsMono Nerd Font;
-  font-size: 13px;
-  font-weight: bold;
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: Iosevka;
+    font-size: 13px;
+    font-weight: bold;
 }
 
 window#waybar {
-  background-color: @crust;
-  color: @text;
-  border-bottom: 4px solid @base;
-  /* border-radius: 12px; */
+    background-color: @crust;
+    color: @text;
 }
 
 window#waybar.hidden {
-  opacity: 0.2;
-}
-
-#waybar > box {
-  padding: 0;
+    opacity: 0.2;
 }
 
 #workspaces {
-  /*padding: 6px 10px;*/
-  color: @text;
-  background-color: @base;
-  margin: 8px 0;
-  border-radius: 6px;
+    /*padding: 6px 10px;*/
+    color: @text;
+    margin: 8px 0;
+    border-radius: 6px;
 }
 
 #workspaces button {
-  padding: 0 2px;
-  margin: 0;
-  background-color: transparent;
-  color: @text;
-  border-radius: 6px;
+    padding: 0 2px;
+    margin: 0;
+    background-color: transparent;
+    color: @text;
+    border-radius: 6px;
 
-  transition: 100ms ease-in-out;
+    transition: 100ms ease-in-out;
 }
 
 #workspaces button.active {
-  color: @text;
+    color: @text;
 }
 
 #workspaces button:not(.active) {
-  color: @surface2;
+    color: @surface2;
 }
 
 #workspaces button.urgent {
-  background-color: @red;
+    background-color: @red;
 }
 
 #workspaces button:hover {
-  background: @lavender;
-  color: @base;
+    background: @lavender;
+    color: @base;
 }
 
 #mode {
-  border-bottom: 3px solid @text;
+    border-bottom: 3px solid @text;
 }
 
 #clock,
@@ -78,55 +71,48 @@ window#waybar.hidden {
 #idle_inhibitor,
 #scratchpad,
 #mpd,
-#custom-update
-{
-  padding: 6px 10px;
-  color: @text;
-  background-color: @base;
-  margin: 8px 0;
-  border-radius: 6px;
+#custom-update {
+    padding: 6px 10px;
+    color: @text;
+    margin: 8px 0;
+    border-radius: 6px;
 }
 
 #custom-home,
 #custom-power {
-  background: @base;
-  color: @text;
-  padding: 0 20px;
+    color: @text;
+    padding: 0 20px;
 }
 
 #custom-home {
-  border-top-right-radius: 14px;
+    border-top-right-radius: 12px;
 }
 
 #custom-power {
-  border-top-left-radius: 14px;
+    border-top-left-radius: 12px;
 }
 
 
 #custom-update {
-  color: @yellow;
+    color: @yellow;
 }
 
 #window {
-  margin: 0 4px;
+    margin: 0 4px;
 }
 
 #window {
-  color: @subtext0;
+    color: @subtext0;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-  margin-left: 0;
+.modules-left>widget:first-child>#workspaces {
+    margin-left: 0;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-  margin-right: 0;
-}
-
-#clock {
-  color: @rosewater;
+.modules-right>widget:last-child>#workspaces {
+    margin-right: 0;
 }
 
 /* #battery { */
@@ -136,27 +122,27 @@ window#waybar.hidden {
 
 #battery.charging,
 #battery.plugged {
-  color: @green;
+    color: @green;
 }
 
 @keyframes blink {
-  to {
-    background-color: @red;
-    color: @crust;
-  }
+    to {
+        background-color: @red;
+        color: @crust;
+    }
 }
 
-#battery.critical:not(.charging) {
-  color: @red;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+#battery.warning:not(.charging) {
+    color: @red;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 #network.disconnected {
-  background-color: @red;
+    background-color: @red;
 }
 
 /*#pulseaudio {*/
@@ -165,22 +151,22 @@ window#waybar.hidden {
 
 /* River */
 #tags button {
-  padding: 0 2px;
-  margin: 0;
-  background-color: transparent;
-  color: @surface1;
+    padding: 0 2px;
+    margin: 0;
+    background-color: transparent;
+    color: @surface1;
 }
 
 #tags button.occupied {
-  color: @subtext0;
+    color: @subtext0;
 }
 
 #tags button.focused {
-  color: @text;
+    color: @text;
 }
 
 #tags button.urgent {
-  background-color: @red;
+    background-color: @red;
 }
 
 /**/

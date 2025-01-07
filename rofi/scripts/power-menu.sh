@@ -4,7 +4,7 @@ chosen=$(printf "󰐥  Power Off\n  Restart\n  Suspend\n  Hibernate\n�
 
 case "$chosen" in
 "󰐥  Power Off") tmux kill-server & poweroff ;;
-"  Restart") reboot ;;
+"  Restart") tmux kill-server & reboot ;;
 "  Suspend") systemctl suspend-then-hibernate ;;
 "  Hibernate") systemctl hibernate ;;
 "󰍃  Log Out") hyprctl dispatch exit ;;

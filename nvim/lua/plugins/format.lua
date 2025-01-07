@@ -3,18 +3,20 @@ return {
     "stevearc/conform.nvim",
     event = { "BufWritePre" },
     cmd = { "ConformInfo" },
+    lazy = true,
     keys = {
       {
-        "<leader>gf",
+        "<leader>cf",
         function()
           require("conform").format({
             async = false,
+            quiet = false,
             lsp_format = "fallback",
-            timeout_ms = 1000,
+            timeout_ms = 2000,
           })
         end,
         mode = { "n", "v" },
-        desc = "Code [F]ormat",
+        desc = "[C]ode [F]ormat",
       },
     },
     opts = {
@@ -23,9 +25,9 @@ return {
         injected = { options = { ignore_errors = true } },
         lua = { "stylua" },
         python = { "ruff_format" },
-        javascript = { "prettierd", "biome", "prettier", stop_after_first = true },
-        typescript = { "prettierd", "biome", "prettier", stop_after_first = true },
-        typescriptreact = { "prettierd", "biome", "prettier", stop_after_first = true },
+        javascript = { "prettier", "prettierd", "biome", stop_after_first = true },
+        typescript = { "prettier", "prettierd", "biome", stop_after_first = true },
+        typescriptreact = { "prettier", "prettierd", "biome", stop_after_first = true },
         markdown = { "prettier", "prettierd", "biome", stop_after_first = true },
         json = { "prettier", "prettierd", "biome", stop_after_first = true },
         astro = { "prettier", "prettierd", "biome", stop_after_first = true },

@@ -2,6 +2,7 @@ return {
   {
     "MeanderingProgrammer/render-markdown.nvim",
     name = "render-markdown",
+    ft = "markdown",
     opts = {
       checkbox = {
         custom = {
@@ -21,6 +22,7 @@ return {
 
   {
     "zk-org/zk-nvim",
+    ft = "markdown",
     config = function()
       local map = function(keys, func, desc, mode)
         mode = mode or "n"
@@ -44,7 +46,7 @@ return {
       map("<leader>zt", "<Cmd>ZkTags<CR>", "[T]ags")
 
       require("zk").setup({
-        picker = "telescope",
+        picker = "fzf_lua",
       })
     end,
   },

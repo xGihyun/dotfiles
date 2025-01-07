@@ -8,7 +8,7 @@ return {
     },
     config = function()
       local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = vim.tbl_deep_extend("force", capabilities, require("blink.cmp").get_lsp_capabilities(capabilities))
+      capabilities = vim.tbl_deep_extend("force", capabilities, require("blink.cmp").get_lsp_capabilities())
 
       local servers = {
         pylsp = {},
@@ -17,15 +17,8 @@ return {
         zls = {},
         lua_ls = {},
         rust_analyzer = {},
-        svelte = {
-          -- capabilities = {
-          --   workspace = {
-          --     didChangeWatchedFiles = false,
-          --   },
-          -- },
-        },
+        svelte = {},
         tailwindcss = {},
-        -- ts_ls = {},
         eslint = {},
         html = {},
         cssls = {},
@@ -33,11 +26,14 @@ return {
         gopls = {
           cmd_env = { GOFUMPT_SPLIT_LONG_LINES = "on" },
           settings = {
-            gofumpt = true,
+            gopls = {
+              gofumpt = true,
+            },
           },
         },
         biome = {},
         marksman = {},
+        vimls = {},
       }
 
       require("mason").setup()
@@ -48,11 +44,6 @@ return {
         ensure_installed = ensure_installed,
         handlers = {
           function(server_name)
-            -- NOTE: Don't setup `ts_ls`, use `typescript-tools.nvim` instead
-            if server_name == "ts_ls" then
-              return
-            end
-
             local server = servers[server_name] or {}
             -- This handles overriding only values explicitly passed
             -- by the server configuration above. Useful when disabling
@@ -66,22 +57,21 @@ return {
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("lsp-attach", {}),
         callback = function(event)
-          local telescope = require("telescope.builtin")
+          local fzf = require("fzf-lua")
           local map = function(keys, func, desc, mode)
             mode = mode or "n"
             vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
           end
 
-          map("gD", vim.lsp.buf.declaration, "[G]o to [D]eclaration")
-          map("gd", telescope.lsp_definitions, "[G]o to [D]efinition")
-          map("gr", telescope.lsp_references, "[G]o to [R]eferences")
-          map("gds", telescope.lsp_document_symbols, "[D]ocument [S]ymbols")
-          map("gws", telescope.lsp_dynamic_workspace_symbols, "[W]ocument [S]ymbols")
           map("K", vim.lsp.buf.hover, "Hover Documentation")
-          map("gi", telescope.lsp_implementations, "[G]o to [I]mplementation")
-          -- map("<C-K>", vim.lsp.buf.signature_help, "")
-          map("<space>D", telescope.lsp_type_definitions, "")
-          map("<space>ca", vim.lsp.buf.code_action, "")
+          map("gD", vim.lsp.buf.declaration, "[G]o to [D]eclaration")
+          map("gd", vim.lsp.buf.definition, "[G]o to [D]efinition")
+          map("gi", vim.lsp.buf.implementation, "[G]o to [I]mplementation")
+          map("gt", vim.lsp.buf.type_definition, "[G]o to [T]ype Definition")
+          map("gr", fzf.lsp_references, "[G]o to [R]eferences")
+          map("gds", fzf.lsp_document_symbols, "[D]ocument [S]ymbols")
+          map("gws", fzf.lsp_workspace_symbols, "[W]orkspace [S]ymbols")
+          map("<space>ca", fzf.lsp_code_actions, "[C]ode [A]ctions")
 
           -- Highlight references of the word under the cursor
           -- when it rests there for a little while.

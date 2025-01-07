@@ -5,7 +5,7 @@ return {
     event = "InsertEnter",
     -- optional: provides snippets for the snippet source
     dependencies = {
-      "L3MON4D3/LuaSnip",
+      { "L3MON4D3/LuaSnip", version = "v2.*" },
       "saadparwaiz1/cmp_luasnip",
       "rafamadriz/friendly-snippets",
       -- lock compat to tagged versions, if you've also locked blink.cmp to tagged versions
@@ -31,15 +31,15 @@ return {
         nerd_font_variant = "mono",
       },
 
+      signature = { enabled = true },
+
       sources = {
-        completion = {
-          enabled_providers = { "lsp", "path", "snippets", "buffer" },
-        },
         providers = {
           lsp = {
-            min_keyword_length = 1,
+            min_keyword_length = 0,
           },
         },
+        cmdline = {},
       },
       completion = {
         trigger = {
@@ -60,6 +60,5 @@ return {
         },
       },
     },
-    opts_extend = { "sources.completion.enabled_providers" },
   },
 }
