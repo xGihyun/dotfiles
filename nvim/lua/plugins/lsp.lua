@@ -18,7 +18,9 @@ return {
         lua_ls = {},
         rust_analyzer = {},
         svelte = {},
-        tailwindcss = {},
+        tailwindcss = {
+          filetypes_exclude = { "markdown" },
+        },
         eslint = {},
         html = {},
         cssls = {},

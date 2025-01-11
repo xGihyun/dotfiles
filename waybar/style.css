@@ -35,7 +35,7 @@ window#waybar.hidden {
 }
 
 #workspaces button.active {
-    color: @text;
+    color: @yellow;
 }
 
 #workspaces button:not(.active) {
@@ -72,10 +72,10 @@ window#waybar.hidden {
 #scratchpad,
 #mpd,
 #custom-update {
-    padding: 6px 10px;
+    padding: 4px 10px;
     color: @text;
     margin: 8px 0;
-    border-radius: 6px;
+    border-radius: 4px;
 }
 
 #custom-home,
