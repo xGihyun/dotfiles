@@ -194,6 +194,10 @@
   (
     value: "(\\(\\( -.-)o_(\")(\")",
     description: "Bunny"
-  )
+  ),
+    (
+        value: "( U Δ U )",
+        description: "Bronya"
+    )
 ]
 

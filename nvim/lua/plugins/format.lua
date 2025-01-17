@@ -32,6 +32,7 @@ return {
         json = { "prettier", "prettierd", "biome", stop_after_first = true },
         astro = { "prettier", "prettierd", "biome", stop_after_first = true },
         svelte = { "prettier", "prettierd", "biome", stop_after_first = true },
+        css = { "prettier", "prettierd", "biome", stop_after_first = true },
         cs = { "csharpier" },
         go = { "goimports", "gofumpt" },
       },

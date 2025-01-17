@@ -1,25 +1,17 @@
 return {
   {
-    "MeanderingProgrammer/render-markdown.nvim",
-    name = "render-markdown",
-    ft = "markdown",
-    opts = {
-      checkbox = {
-        custom = {
-          important = { raw = "[!]", rendered = "󰓎 ", highlight = "DiagnosticWarn" },
-        },
-      },
-      latex = {
-        enabled = true,
-        converter = "latex2text",
-        highlight = "RenderMarkdownMath",
-        top_pad = 0,
-        bottom_pad = 0,
-      },
-    },
-    dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" },
-  },
+    "OXY2DEV/markview.nvim",
+    lazy = false, -- Recommended
+    -- ft = "markdown" -- If you decide to lazy-load anyway
 
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons",
+    },
+    opts = {
+      hybrid_modes = { "n" },
+    },
+  },
   {
     "zk-org/zk-nvim",
     event = "VimEnter",
