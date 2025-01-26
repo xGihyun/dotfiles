@@ -27,7 +27,7 @@ return {
         "<Cmd>ZkNew { dir = vim.fn.expand('%:p:h'), title = vim.fn.input('Title: ') }<CR>",
         "[N]ew [N]ote"
       )
-      map("<leader>znd", "<Cmd>ZkNew { dir = 'journal/daily', group = 'daily' }<CR>", "[N]ew [D]aily note")
+      map("<leader>znd", "<Cmd>ZkNew { dir = 'daily', group = 'daily' }<CR>", "[N]ew [D]aily note")
       map(
         "<leader>znp",
         "<Cmd>ZkNew { dir = 'projects', group = 'projects', title = vim.fn.input('Title: ') }<CR>",

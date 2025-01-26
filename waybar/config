@@ -15,9 +15,9 @@
         "disable-scroll": true,
         "disable-markup" : false,
         "all-outputs": true,
-        // "persistent_workspaces": {
-        //   "*": 9
-        // },
+        "persistent-workspaces": {
+          "*": 9
+        },
         "format": " {icon} ",
         "format-icons": {
             "1": "1",
