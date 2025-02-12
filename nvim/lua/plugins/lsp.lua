@@ -2,7 +2,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      { "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
+      { "williamboman/mason.nvim", opts = {} },
       "williamboman/mason-lspconfig.nvim",
       "saghen/blink.cmp",
     },
@@ -37,8 +37,6 @@ return {
         marksman = {},
         vimls = {},
       }
-
-      require("mason").setup()
 
       local ensure_installed = vim.tbl_keys(servers or {})
 
