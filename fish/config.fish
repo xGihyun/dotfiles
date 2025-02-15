@@ -107,9 +107,9 @@ end
 alias v="nvim"
 alias hx="helix"
 alias ls="eza"
-alias mirrors="sudo $HOME/dotfiles-hyprland/_scripts/mirrors.sh"
+alias mirrors="sudo $HOME/.config/_scripts/mirrors.sh"
 alias pnpx="pnpm dlx"
-alias fv="source $HOME/dotfiles-hyprland/_scripts/cd-fzf.fish"
+alias fv="source $HOME/.config/_scripts/cd-fzf.fish"
 
 #fish_add_path "$HOME/zig-linux-x86_64-0.14.0-dev.244+0d79aa017"
 #fish_add_path "$HOME/zig-linux-x86_64-0.13.0"

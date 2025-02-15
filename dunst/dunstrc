@@ -1,0 +1,3 @@
+[play_sound]
+    summary = "*"
+    script = ~/.config/_scripts/notify.sh
