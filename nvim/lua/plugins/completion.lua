@@ -1,18 +1,22 @@
 return {
   {
     "saghen/blink.cmp",
-    lazy = false,
+    version = "*",
     event = "InsertEnter",
-    -- optional: provides snippets for the snippet source
     dependencies = {
-      { "L3MON4D3/LuaSnip", version = "v2.*" },
-      "saadparwaiz1/cmp_luasnip",
-      "rafamadriz/friendly-snippets",
-      -- lock compat to tagged versions, if you've also locked blink.cmp to tagged versions
-      { "saghen/blink.compat", version = "*", opts = { impersonate_nvim_cmp = true } },
+      {
+        "L3MON4D3/LuaSnip",
+        version = "v2.*",
+        dependencies = {
+          {
+            "rafamadriz/friendly-snippets",
+            config = function()
+              require("luasnip.loaders.from_vscode").lazy_load()
+            end,
+          },
+        },
+      },
     },
-
-    version = "v0.*",
 
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
@@ -25,29 +29,26 @@ return {
         ["<C-p>"] = { "select_prev", "fallback" },
         ["<CR>"] = { "accept", "fallback" },
       },
-
+      snippets = {
+        preset = "luasnip",
+      },
+      cmdline = {
+        keymap = {
+          preset = "none",
+        },
+      },
       appearance = {
-        use_nvim_cmp_as_default = true,
+        use_nvim_cmp_as_default = false,
         nerd_font_variant = "mono",
       },
-
       signature = { enabled = true },
-
-      sources = {
-        providers = {
-          lsp = {
-            min_keyword_length = 0,
-          },
-        },
-        cmdline = {},
-      },
       completion = {
         trigger = {
           show_on_insert_on_trigger_character = false,
         },
         documentation = {
           auto_show = true,
-          auto_show_delay_ms = 250,
+          auto_show_delay_ms = 200,
           window = {
             border = "single",
           },
@@ -56,7 +57,9 @@ return {
           border = "single",
         },
         list = {
-          selection = "preselect",
+          selection = {
+            preselect = true,
+          },
         },
       },
     },
