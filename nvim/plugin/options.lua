@@ -4,7 +4,7 @@
 
 local opt = vim.opt
 
-opt.colorcolumn = "80"
+opt.colorcolumn = "100"
 
 -- opt.guicursor = ""
 opt.tabstop = 4
@@ -39,3 +39,8 @@ opt.inccommand = "split"
 opt.cursorline = true
 opt.scrolloff = 10
 opt.hlsearch = true
+
+-- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
+-- instead raise a dialog asking if you wish to save the current file(s)
+-- See `:help 'confirm'`
+opt.confirm = true

@@ -8,7 +8,6 @@ return {
         flavour = "mocha",
         transparent_background = false,
       })
-      -- vim.cmd.colorscheme("catppuccin")
     end,
   },
   {
@@ -27,6 +26,17 @@ return {
       vim.api.nvim_set_hl(0, "FloatFooter", { bg = "#32302f" })
       vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#32302f" })
       vim.api.nvim_set_hl(0, "FloatBorder", { bg = "#32302f" })
+    end,
+  },
+  {
+    "sainnhe/everforest",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      -- Optionally configure and load the colorscheme
+      -- directly inside the plugin declaration.
+      vim.g.everforest_enable_italic = true
+      vim.g.everforest_background = "hard"
     end,
   },
 }

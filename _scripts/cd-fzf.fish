@@ -3,7 +3,7 @@
 set search_paths ~/ ~/Development ~/Documents ~/Documents/Academics ~/Documents/Notes
 
 set selected (find $search_paths \
-    -mindepth 1 -maxdepth 5 \
+    -mindepth 1 -maxdepth 8 \
     \( \
         -name "node_modules" -prune \
         -o -name ".cache" -prune \

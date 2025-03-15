@@ -11,5 +11,6 @@ config.font = wezterm.font("Iosevka")
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = "AlwaysPrompt"
 config.scrollback_lines = 3000
+config.max_fps = 120
 
 return config

@@ -29,6 +29,11 @@ return {
         ["<C-p>"] = { "select_prev", "fallback" },
         ["<CR>"] = { "accept", "fallback" },
       },
+      -- sources = {
+      --   per_filetype = {
+      --     markdown = { "markview" },
+      --   },
+      -- },
       snippets = {
         preset = "luasnip",
       },

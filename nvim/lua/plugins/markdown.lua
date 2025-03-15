@@ -26,8 +26,6 @@ return {
   },
   {
     "zk-org/zk-nvim",
-    event = "VimEnter",
-    ft = "markdown",
     config = function()
       local map = function(keys, func, desc, mode)
         mode = mode or "n"
