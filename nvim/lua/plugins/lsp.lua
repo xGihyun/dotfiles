@@ -51,7 +51,7 @@ return {
             },
           },
         },
-        biome = {},
+        -- biome = {},
         marksman = {},
         vimls = {},
         jdtls = {},
