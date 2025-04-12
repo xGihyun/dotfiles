@@ -1,9 +1,9 @@
 #!/usr/bin/env fish
 
-set search_paths ~/ ~/Development ~/Documents ~/Documents/Academics ~/Documents/Notes
+set search_paths ~/ ~/Development ~/Documents ~/Documents/Academics ~/Documents/Notes ~/dotfiles-hyprland ~/Documents/Personal
 
 set selected (find $search_paths \
-    -mindepth 1 -maxdepth 8 \
+    -mindepth 1 -maxdepth 1 \
     \( \
         -name "node_modules" -prune \
         -o -name ".cache" -prune \

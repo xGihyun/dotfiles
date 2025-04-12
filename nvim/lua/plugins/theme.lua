@@ -39,4 +39,9 @@ return {
       vim.g.everforest_background = "hard"
     end,
   },
+  {
+    "rebelot/kanagawa.nvim",
+    lazy = false,
+    priority = 1000,
+  },
 }
