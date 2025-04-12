@@ -3,6 +3,8 @@ keybinds {
     normal {
         // uncomment this and adjust key if using copy_on_select=false
         // bind "Alt c" { Copy; }
+        bind "Ctrl Space" { SwitchToMode "Tmux"; }
+        bind "Shift Alt h" { MoveFocus "Left"; }
     }
     locked {
         bind "Ctrl g" { SwitchToMode "Normal"; }
@@ -123,7 +125,7 @@ keybinds {
     }
     tmux {
         bind "[" { SwitchToMode "Scroll"; }
-        bind "Ctrl b" { Write 2; SwitchToMode "Normal"; }
+        bind "Ctrl Space" { Write 2; SwitchToMode "Normal"; }
         bind "\"" { NewPane "Down"; SwitchToMode "Normal"; }
         bind "%" { NewPane "Right"; SwitchToMode "Normal"; }
         bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
@@ -135,10 +137,7 @@ keybinds {
         bind "Right" { MoveFocus "Right"; SwitchToMode "Normal"; }
         bind "Down" { MoveFocus "Down"; SwitchToMode "Normal"; }
         bind "Up" { MoveFocus "Up"; SwitchToMode "Normal"; }
-        bind "h" { MoveFocus "Left"; SwitchToMode "Normal"; }
-        bind "l" { MoveFocus "Right"; SwitchToMode "Normal"; }
-        bind "j" { MoveFocus "Down"; SwitchToMode "Normal"; }
-        bind "k" { MoveFocus "Up"; SwitchToMode "Normal"; }
+        bind "h" { NewPane "Down"; }
         bind "o" { FocusNextPane; }
         bind "d" { Detach; }
         bind "Space" { NextSwapLayout; }
@@ -234,18 +233,18 @@ pane_frames false
 // Once these themes are defined, one of them should to be selected in the "theme" section of this file
 //
 themes {
-    dracula {
-        fg 248 248 242
-        bg 40 42 54
-        red 255 85 85
-        green 80 250 123
-        yellow 241 250 140
-        blue 98 114 164
-        magenta 255 121 198
-        orange 255 184 108
-        cyan 139 233 253
-        black 0 0 0
-        white 255 255 255
+    gruvbox-material {
+      bg "#1b1b1b"
+      fg "#ddc7a1"
+      red "#ea6962"
+      green "#a9b665"
+      blue "#7daea3"
+      yellow "#d8a657"
+      magenta "#d3869b"
+      orange "#e78a4e"
+      cyan "#89b482"
+      black "#1b1b1b"
+      white "#ddc7a1"
     }
     catppuccin-mocha {
       bg "#585b70" // Surface2
@@ -278,12 +277,12 @@ themes {
 // Choose the theme that is specified in the themes section.
 // Default: default
 
-theme "rose-pine"
+theme "gruvbox-material"
 
 // The name of the default layout to load on startup
 // Default: "default"
 
-default_layout "default"
+default_layout "compact"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
