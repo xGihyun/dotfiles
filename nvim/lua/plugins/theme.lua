@@ -26,6 +26,7 @@ return {
         bg_green = { "#97724C", "234" },
         blue = { "#807B80", "234" },
         purple = { "#C3A973", "234" },
+        aqua = { "#849966", "234" },
       }
       vim.cmd.colorscheme("gruvbox-material")
 
