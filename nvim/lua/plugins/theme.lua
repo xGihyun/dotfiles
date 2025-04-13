@@ -19,6 +19,13 @@ return {
       -- vim.g.gruvbox_material_float_style = "dim"
       vim.g.gruvbox_material_colors_override = {
         bg0 = { "#1b1b1b", "234" },
+        fg1 = { "#d6c5a9", "234" },
+        red = { "#943838", "234" },
+        bg_red = { "#943838", "234" },
+        green = { "#97724C", "234" },
+        bg_green = { "#97724C", "234" },
+        blue = { "#807B80", "234" },
+        purple = { "#C3A973", "234" },
       }
       vim.cmd.colorscheme("gruvbox-material")
 
