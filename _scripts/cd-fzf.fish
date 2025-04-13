@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-set search_paths ~/ ~/Development ~/Documents ~/Documents/Academics ~/Documents/Notes ~/dotfiles-hyprland ~/Documents/Personal
+set search_paths ~/ ~/Development ~/Documents ~/Documents/Academics ~/Documents/Notes ~/dotfiles-hyprland ~/Documents/Personal ~/Pictures ~/Videos ~/Music
 
 set selected (find $search_paths \
     -mindepth 1 -maxdepth 1 \
