@@ -100,14 +100,16 @@ return {
           end
 
           map("K", vim.lsp.buf.hover, "Hover Documentation")
-          map("gD", vim.lsp.buf.declaration, "[G]o to [D]eclaration")
-          map("gd", vim.lsp.buf.definition, "[G]o to [D]efinition")
-          map("gi", vim.lsp.buf.implementation, "[G]o to [I]mplementation")
-          map("gt", vim.lsp.buf.type_definition, "[G]o to [T]ype Definition")
+          map("gD", fzf.lsp_declarations, "[G]o to [D]eclaration")
+          map("gd", fzf.lsp_definitions, "[G]o to [D]efinition")
+          map("gi", fzf.lsp_implementations, "[G]o to [I]mplementation")
+          map("gt", fzf.lsp_typedefs, "[G]o to [T]ype Definition")
           map("gr", fzf.lsp_references, "[G]o to [R]eferences")
-          map("gds", fzf.lsp_document_symbols, "[D]ocument [S]ymbols")
-          map("gws", fzf.lsp_workspace_symbols, "[W]orkspace [S]ymbols")
-          map("<space>ca", fzf.lsp_code_actions, "[C]ode [A]ctions")
+          map("<leader>ca", fzf.lsp_code_actions, "[C]ode [A]ctions")
+          map("<leader>ds", fzf.lsp_document_symbols, "[D]ocument [S]ymbols")
+          map("<leader>dd", fzf.diagnostics_document, "[D]ocument [D]iagnostics")
+          map("<leader>ws", fzf.lsp_workspace_symbols, "[W]orkspace [S]ymbols")
+          map("<leader>wd", fzf.diagnostics_document, "[W]orkspace [D]iagnostics")
 
           -- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
           ---@param client vim.lsp.Client
