@@ -2,8 +2,8 @@ return {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      { "williamboman/mason.nvim", opts = {} },
-      "williamboman/mason-lspconfig.nvim",
+      { "mason-org/mason.nvim", opts = {} },
+      "mason-org/mason-lspconfig.nvim",
       "saghen/blink.cmp",
     },
     config = function()
@@ -55,7 +55,7 @@ return {
         marksman = {},
         vimls = {},
         jdtls = {},
-        ts_ls = {},
+        -- ts_ls = {},
       }
 
       local ensure_installed = vim.tbl_keys(servers or {})

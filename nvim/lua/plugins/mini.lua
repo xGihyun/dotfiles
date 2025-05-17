@@ -4,7 +4,7 @@ return {
     config = function()
       require("mini.ai").setup({ n_lines = 500 })
       require("mini.surround").setup({})
-      require("mini.pairs").setup({})
+      -- require("mini.pairs").setup({})
       require("mini.indentscope").setup({})
 
       require("mini.icons").setup({
@@ -23,12 +23,18 @@ return {
         },
       })
 
-      local hipatterns = require("mini.hipatterns")
-      hipatterns.setup({
-        highlighters = {
-          hex_color = hipatterns.gen_highlighter.hex_color(),
-        },
-      })
+      -- local hipatterns = require("mini.hipatterns")
+      -- hipatterns.setup({
+      --   highlighters = {
+      --     hex_color = hipatterns.gen_highlighter.hex_color(),
+      --   },
+      -- })
+    end,
+  },
+  {
+    "brenoprata10/nvim-highlight-colors",
+    config = function()
+      require("nvim-highlight-colors").setup({})
     end,
   },
 }

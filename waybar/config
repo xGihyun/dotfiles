@@ -1,14 +1,16 @@
 {
-    "layer": "top", // Waybar at top layer
+    "layer": "top", 
     "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 40, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
+    "height": 42, 
+    // "width": 1280, 
     "spacing": 4, // Gaps between modules (4px)
     "margin": "0px",
     // Choose the order of the modules
-    "modules-left": ["custom/home", "hyprland/workspaces", "river/tags"],
+    "modules-left": ["custom/home", "hyprland/workspaces", "river/tags", "niri/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["custom/update", "temperature", "cpu", "memory", "network", "pulseaudio", "battery", "custom/power"],
+    "modules-right": ["temperature", "cpu", "memory", "network", "pulseaudio", "battery", "custom/power"],
+    // "modules-right": ["custom/update", "temperature", "cpu", "memory", "network", "pulseaudio", "battery", "custom/power"],
+
     // Modules configuration
     "hyprland/workspaces": {
         // "active-only": true,
@@ -45,6 +47,20 @@
         //     "9": "󰙯",
         // }
     }, 
+    "niri/workspaces": {
+        "format": " {icon} ",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+        },
+    }, 
     "river/tags": {
         "num-tags": 9,
     },
@@ -56,8 +72,6 @@
     },
     "cpu": {
         "format": "<span color=\"#d8a657\">󰻠</span> {usage}%",
-        // "format": "{icon} {usage}%",
-        // "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
         "tooltip": false
     },
     "memory": {
@@ -65,10 +79,7 @@
       "format": "<span color=\"#d8a657\">󰍛</span> {}%"
     },
     "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
         "format": "<span color=\"#d8a657\">{icon}</span> {temperatureC}°C",
         "format-icons": ["", "", ""]
     },
@@ -79,8 +90,8 @@
             "critical": 15
         },
         "format": "<span color=\"#d8a657\">{icon}</span> {capacity}%",
-        "format-charging": "<span color=\"#a9b665\">󰂄</span> {capacity}%",
-        "format-plugged": "<span color=\"#a9b665\">󰂄</span> {capacity}%",
+        "format-charging": "<span color=\"#92994d\">󰂄</span> {capacity}%",
+        "format-plugged": "<span color=\"#92994d\">󰂄</span> {capacity}%",
         "format-icons": ["󰁻", "󰁽", "󰁿", "󰂁", "󰁹"],
         "interval": 20
     },
@@ -113,19 +124,18 @@
         "on-click": "pavucontrol"
     },
     "custom/home": {
-    	"format":"",
+      "format":"",
       "tooltip": false
     },
     "custom/power": {
-      "format": "",
+      "format": "󰐥",
       "on-click": "~/dotfiles-hyprland/rofi/scripts/power-menu.sh"
     },
     "custom/update": {
         "interval" : 120,
         "return-type" : "string",
         "exec" : "~/.config/waybar/scripts/checkupdates.sh",
-        "tooltip" : false,
-        // "on-click" : "setsid -f kitty -e paru -Syyu"
+        "tooltip" : false
     },
 }
 

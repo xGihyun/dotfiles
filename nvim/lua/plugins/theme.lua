@@ -18,7 +18,7 @@ return {
       vim.g.gruvbox_material_diagnostic_virtual_text = "colored"
       -- vim.g.gruvbox_material_float_style = "dim"
       vim.g.gruvbox_material_colors_override = {
-        bg0 = { "#1b1b1b", "234" },
+        bg0 = { "#171717", "234" },
         fg1 = { "#d6c5a9", "234" },
         red = { "#943838", "234" },
         bg_red = { "#943838", "234" },
@@ -51,5 +51,19 @@ return {
     "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
+  },
+  {
+    "webhooked/kanso.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("kanso").setup({
+        theme = "zen", -- Load "zen" theme
+        background = { -- map the value of 'background' option to a theme
+          dark = "zen", -- try "ink" !
+          light = "pearl",
+        },
+      })
+    end,
   },
 }
