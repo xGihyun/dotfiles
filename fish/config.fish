@@ -112,6 +112,7 @@ alias pnpx="pnpm dlx"
 alias fv="source $HOME/.config/_scripts/cd-fzf.fish"
 
 set -gx EDITOR nvim
+set -gx ANDROID_HOME $HOME/Android/Sdk
 # set -gx DOCKER_SOCK $HOME/.docker/desktop/docker.sock
 
 fish_add_path "$HOME/zig-linux-x86_64-0.14.0"
