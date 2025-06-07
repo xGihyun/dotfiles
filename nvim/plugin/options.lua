@@ -6,7 +6,7 @@ local opt = vim.opt
 
 opt.colorcolumn = "100"
 
--- opt.guicursor = ""
+opt.guicursor = ""
 opt.tabstop = 4
 opt.softtabstop = 4
 opt.shiftwidth = 4
