@@ -122,3 +122,5 @@ fish_add_path "$HOME/zig-linux-x86_64-0.14.0"
 
 set fish_greeting
 starship init fish | source
+
+zoxide init fish | source
