@@ -7,9 +7,6 @@ return {
       "saghen/blink.cmp",
     },
     config = function()
-      -- local capabilities = vim.lsp.protocol.make_client_capabilities()
-      -- capabilities = vim.tbl_deep_extend("force", capabilities, require("blink.cmp").get_lsp_capabilities())
-
       local servers = {
         pylsp = {},
         ruff = {},
@@ -55,7 +52,7 @@ return {
         marksman = {},
         vimls = {},
         jdtls = {},
-        -- ts_ls = {},
+        ts_ls = {},
       }
 
       local ensure_installed = vim.tbl_keys(servers or {})
@@ -65,25 +62,12 @@ return {
         handlers = {
           function(server_name)
             -- Prevent duplicate servers
-            if server_name == "jdtls" or server_name == "ts_ls" then
+            if server_name == "jdtls" then
               return
             end
 
             local server = servers[server_name] or {}
-            -- if server_name == "astro" or server_name == "svelte" then
-            --   server.on_attach = function(client, bufnr)
-            --     vim.api.nvim_create_autocmd("BufWritePost", {
-            --       pattern = { "*.js", "*.ts" },
-            --       callback = function(ctx)
-            --         -- Here use ctx.match instead of ctx.file
-            --         client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
-            --       end,
-            --     })
-            --   end
-            -- end
-
             server.capabilities = require("blink.cmp").get_lsp_capabilities(server.capabilities)
-            -- server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
 
             require("lspconfig")[server_name].setup(server)
           end,
@@ -105,6 +89,7 @@ return {
           map("gi", fzf.lsp_implementations, "[G]o to [I]mplementation")
           map("gt", fzf.lsp_typedefs, "[G]o to [T]ype Definition")
           map("gr", fzf.lsp_references, "[G]o to [R]eferences")
+          map("gR", vim.lsp.buf.rename, "[R]ename")
           map("<leader>ca", fzf.lsp_code_actions, "[C]ode [A]ctions")
           map("<leader>ds", fzf.lsp_document_symbols, "[D]ocument [S]ymbols")
           map("<leader>dd", fzf.diagnostics_document, "[D]ocument [D]iagnostics")
@@ -161,13 +146,40 @@ return {
           end
         end,
       })
+
+      vim.diagnostic.config({
+        severity_sort = true,
+        float = { border = "rounded", source = "if_many" },
+        underline = { severity = vim.diagnostic.severity.ERROR },
+        signs = vim.g.have_nerd_font and {
+          text = {
+            [vim.diagnostic.severity.ERROR] = "󰅚 ",
+            [vim.diagnostic.severity.WARN] = "󰀪 ",
+            [vim.diagnostic.severity.INFO] = "󰋽 ",
+            [vim.diagnostic.severity.HINT] = "󰌶 ",
+          },
+        } or {},
+        virtual_text = {
+          source = "if_many",
+          spacing = 2,
+          format = function(diagnostic)
+            local diagnostic_message = {
+              [vim.diagnostic.severity.ERROR] = diagnostic.message,
+              [vim.diagnostic.severity.WARN] = diagnostic.message,
+              [vim.diagnostic.severity.INFO] = diagnostic.message,
+              [vim.diagnostic.severity.HINT] = diagnostic.message,
+            }
+            return diagnostic_message[diagnostic.severity]
+          end,
+        },
+      })
     end,
   },
-  {
-    "pmizio/typescript-tools.nvim",
-    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-    opts = {},
-  },
+  -- {
+  --   "pmizio/typescript-tools.nvim",
+  --   dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+  --   opts = {},
+  -- },
   {
     "mfussenegger/nvim-jdtls",
     ft = "java",
