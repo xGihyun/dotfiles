@@ -353,7 +353,7 @@ binds {
     Mod+E { spawn "nemo"; }
 
     Mod+P { spawn "~/.config/rofi/scripts/power-menu.sh"; }
-    Mod+Shift+E { spawn "~/Development/rust/rofi-kaomoji/target/release/rofi-kaomoji"; }
+    Mod+Shift+E { spawn "~/Development/rust/rofi-kaomoji/zig-out/bin/rofi_kaomoji"; }
     Mod+SemiColon { spawn "~/.config/_scripts/binaural_beat.fish"; }
 
     // The allow-when-locked=true property makes them work even when the session is locked.
