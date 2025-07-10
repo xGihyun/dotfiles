@@ -52,7 +52,7 @@ return {
         marksman = {},
         vimls = {},
         jdtls = {},
-        ts_ls = {},
+        -- ts_ls = {},
       }
 
       local ensure_installed = vim.tbl_keys(servers or {})
@@ -62,7 +62,7 @@ return {
         handlers = {
           function(server_name)
             -- Prevent duplicate servers
-            if server_name == "jdtls" then
+            if server_name == "jdtls" or server_name == "ts_ls" then
               return
             end
 
@@ -175,11 +175,11 @@ return {
       })
     end,
   },
-  -- {
-  --   "pmizio/typescript-tools.nvim",
-  --   dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-  --   opts = {},
-  -- },
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    opts = {},
+  },
   {
     "mfussenegger/nvim-jdtls",
     ft = "java",
