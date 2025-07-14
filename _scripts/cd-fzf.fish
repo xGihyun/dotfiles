@@ -1,5 +1,7 @@
 #!/usr/bin/env fish
 
+# NOTE: I will probably remove this script soon.
+
 set search_paths ~/ ~/Development ~/Documents ~/Documents/Academics ~/Documents/Notes ~/dotfiles-hyprland ~/Documents/Personal ~/Pictures ~/Videos ~/Music
 
 set selected (find $search_paths \
