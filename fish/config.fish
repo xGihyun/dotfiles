@@ -78,6 +78,11 @@ set -gx ANDROID_HOME $HOME/Android/Sdk
 fish_add_path "$HOME/zig-linux-x86_64-0.14.0"
 #set -gx ANDROID_HOME $HOME/Android/Sdk
 
+
+### Keybinds
+
+bind \cf "~/.config/_scripts/tmux-sessionizer.sh"
+
 ### Others
 
 set fish_greeting
