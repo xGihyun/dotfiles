@@ -1,3 +1,3 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-paplay ~/.config/_audio/panpakapan.mp3
+ffplay -nodisp -volume 25 -autoexit ~/.config/_audio/panpakapan.mp3 & disown
