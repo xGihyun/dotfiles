@@ -129,7 +129,7 @@
     },
     "custom/power": {
       "format": "󰐥",
-      "on-click": "~/dotfiles-hyprland/rofi/scripts/power-menu.sh"
+      "on-click": "~/.config/rofi/scripts/power-menu.sh"
     },
     "custom/update": {
         "interval" : 120,
