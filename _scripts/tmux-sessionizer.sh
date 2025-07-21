@@ -17,7 +17,7 @@ selection=$(printf '%s\n' "${display_items[@]}" | fzf)
 [[ -z $selection ]] && exit 0
 
 for i in "${!display_items[@]}"; do
-    if [[ "${display_items[i]}" == $selection ]]; then
+    if [[ "${display_items[i]}" == "$selection" ]]; then
         selected_data="${data_items[i]}"
         break
     fi
@@ -27,14 +27,14 @@ type=${selected_data%%:*}
 name=${selected_data#*:}
 
 if [[ $type == "session" ]]; then
-    [[ -z $TMUX ]] && tmux attach -t $name || tmux switch-client -t $name
+    [[ -z $TMUX ]] && tmux attach -t "$name" || tmux switch-client -t "$name"
 else
-    session_name=$(echo $name | tr . _)
+    session_name=$(echo "$name" | tr . _)
     
     if [[ -z $TMUX ]]; then
-        tmux new-session -s $session_name -c $dir
+        tmux new-session -s "$session_name" -c "$dir"
     else
-        tmux new-session -ds $session_name -c $dir
-        tmux switch-client -t $session_name
+        tmux new-session -ds "$session_name" -c "$dir"
+        tmux switch-client -t "$session_name"
     fi
 fi
