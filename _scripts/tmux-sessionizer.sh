@@ -32,9 +32,9 @@ else
     session_name=$(echo "$name" | tr . _)
     
     if [[ -z $TMUX ]]; then
-        tmux new-session -s "$session_name" -c "$dir"
+        tmux new-session -s "$session_name" -c "$session_name"
     else
-        tmux new-session -ds "$session_name" -c "$dir"
+        tmux new-session -ds "$session_name" -c "$session_name"
         tmux switch-client -t "$session_name"
     fi
 fi
