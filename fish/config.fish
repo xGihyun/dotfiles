@@ -52,6 +52,14 @@ function pg_connect
         "$pg_name"
 end
 
+function fcd
+    set search_paths ~/ ~/Documents
+    set selection (find $search_paths -mindepth 1 -maxdepth 1 -type d | fzf)
+    
+    if test -n "$selection"
+        cd "$selection"
+    end
+end
 
 function y
 	set tmp (mktemp -t "yazi-cwd.XXXXXX")
@@ -69,7 +77,6 @@ alias hx="helix"
 alias ls="eza"
 alias mirrors="sudo $HOME/.config/_scripts/mirrors.sh"
 alias pnpx="pnpm dlx"
-alias fv="source $HOME/.config/_scripts/cd-fzf.fish"
 
 set -gx EDITOR nvim
 set -gx ANDROID_HOME $HOME/Android/Sdk
