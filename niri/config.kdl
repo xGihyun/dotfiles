@@ -264,9 +264,7 @@ layer-rule {
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
-spawn-at-startup "waybar" 
-spawn-at-startup "swaybg" "-i" "~/Pictures/wallpapers/kayoko/116416657_p0.jpg" "-m" "fill"
-spawn-at-startup "xwayland-satellite"
+spawn-at-startup "~/.config/_scripts/startup.sh" 
 
 environment {
     DISPLAY ":0"
@@ -593,6 +591,6 @@ binds {
 }
 
 cursor {
-    xcursor-theme "Bibata-Modern-Classic"
+    xcursor-theme "Takanashi-Hoshino-Swimsuit"
     xcursor-size 32
 }
