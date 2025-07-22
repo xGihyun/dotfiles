@@ -89,6 +89,7 @@ fish_add_path "$HOME/zig-linux-x86_64-0.14.0"
 ### Keybinds
 
 bind \cf "~/.config/_scripts/tmux-sessionizer.sh"
+bind alt-tab accept-autosuggestion
 
 ### Others
 
