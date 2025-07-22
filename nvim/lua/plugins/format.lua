@@ -35,6 +35,7 @@ return {
         css = { "prettier", "prettierd", "biome", stop_after_first = true },
         cs = { "csharpier" },
         go = { "goimports", "gofumpt", "golines" },
+        sh = { "shfmt" },
       },
       formatters = {
         csharpier = {
