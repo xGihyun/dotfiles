@@ -30,23 +30,23 @@ return {
       }
 
       -- vim.g.gruvbox_material_colors_override = {
-      --   bg0 = { "#171717", "234" },
-      --   bg1 = { "#242424", "234" },
-      --   bg2 = { "#242424", "234" },
-      --   bg3 = { "#404040", "234" },
-      --   bg4 = { "#404040", "234" },
-      --   bg5 = { "#545454", "234" },
-      --   fg0 = { "#b5b5b5", "234" },
-      --   fg1 = { "#bfbfbf", "234" },
-      --   red = { "#b5b5b5", "234" },
-      --   bg_red = { "#666666", "234" },
-      --   green = { "#bfe4f8", "234" },
-      --   bg_green = { "#737373", "234" },
-      --   blue = { "#b5b5b5", "234" },
-      --   purple = { "#9c9c9c", "234" },
-      --   aqua = { "#b5b5b5", "234" },
-      --   yellow = { "#b5b5b5", "234" },
-      --   orange = { "#f9a9f0", "234" },
+      --   bg0 = { "#1c121c", "234" },
+      --   bg1 = { "#251825", "234" },
+      --   bg2 = { "#251825", "234" },
+      --   bg3 = { "#3e283e", "234" },
+      --   bg4 = { "#3e283e", "234" },
+      --   bg5 = { "#5d3c5d", "234" },
+      --   fg0 = { "#bfbbbf", "234" },
+      --   fg1 = { "#c6c2c6", "234" },
+      --   red = { "#e383a1", "234" },
+      --   bg_red = { "#e383a1", "234" },
+      --   green = { "#add5eb", "234" },
+      --   bg_green = { "#add5eb", "234" },
+      --   blue = { "#8F8898", "234" },
+      --   purple = { "#AB9BA4", "234" },
+      --   aqua = { "#AB9BA4", "234" },
+      --   yellow = { "#add5eb", "234" },
+      --   orange = { "#DAA69E", "234" },
       --   grey0 = { "#707070", "234" },
       --   grey1 = { "#666666", "234" },
       --   grey2 = { "#969696", "234" },
@@ -61,10 +61,10 @@ return {
       vim.api.nvim_set_hl(0, "FloatFooter", { bg = "#32302f" })
       vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#32302f" })
       vim.api.nvim_set_hl(0, "FloatBorder", { bg = "#32302f" })
-      -- vim.api.nvim_set_hl(0, "FloatTitle", { bg = "#333333", fg = "#e78a4e" })
-      -- vim.api.nvim_set_hl(0, "FloatFooter", { bg = "#333333" })
-      -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#333333" })
-      -- vim.api.nvim_set_hl(0, "FloatBorder", { bg = "#333333" })
+      -- vim.api.nvim_set_hl(0, "FloatTitle", { bg = "#251825", fg = "#DAA69E" })
+      -- vim.api.nvim_set_hl(0, "FloatFooter", { bg = "#251825" })
+      -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#251825" })
+      -- vim.api.nvim_set_hl(0, "FloatBorder", { bg = "#251825" })
     end,
   },
   {
