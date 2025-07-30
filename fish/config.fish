@@ -38,7 +38,7 @@ function pg_connect
         return
     end
 
-    if not read -P "Enter user: 5432): " pg_user
+    if not read -P "Enter user: " pg_user
         return
     end
 
@@ -70,6 +70,11 @@ function y
 	rm -f -- "$tmp"
 end
 
+function tm
+    tmux attach 2>/dev/null; and return
+    tmux new
+end
+
 ### Aliases
 
 alias v="nvim"
@@ -80,10 +85,8 @@ alias pnpx="pnpm dlx"
 
 set -gx EDITOR nvim
 set -gx ANDROID_HOME $HOME/Android/Sdk
-# set -gx DOCKER_SOCK $HOME/.docker/desktop/docker.sock
 
 fish_add_path "$HOME/zig-linux-x86_64-0.14.0"
-#set -gx ANDROID_HOME $HOME/Android/Sdk
 
 
 ### Keybinds
