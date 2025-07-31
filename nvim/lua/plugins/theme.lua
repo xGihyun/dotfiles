@@ -7,6 +7,27 @@ return {
       require("catppuccin").setup({
         flavour = "mocha",
         transparent_background = false,
+        color_overrides = {
+          mocha = {
+            base = "#181818",
+            mantle = "#201e20",
+            crust = "#282428",
+            mauve = "#d55d83",
+            green = "#8F8898",
+            sky = "#DAA69E",
+            sapphire = "#8F8898",
+            surface0 = "#201e20",
+            surface1 = "#514851",
+            surface2 = "#514851",
+            subtext0 = "#8F8898",
+            subtext1 = "#bfbbbf",
+            text = "#c6c2c6",
+            blue = "#9fc9df",
+            lavender = "#c6c2c6",
+            peach = "#6e8fc4",
+            yellow = "#AB9BA4",
+          },
+        },
       })
     end,
   },
