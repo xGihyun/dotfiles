@@ -1,0 +1,127 @@
+{
+    "layer": "top", 
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 42, 
+    // "width": 1280, 
+    "spacing": 4, // Gaps between modules (4px)
+    "margin": "0px",
+    // Choose the order of the modules
+    "modules-left": ["custom/home", "hyprland/workspaces", "river/tags", "niri/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["temperature", "cpu", "memory", "network", "pulseaudio", "battery", "custom/power"],
+    // "modules-right": ["custom/update", "temperature", "cpu", "memory", "network", "pulseaudio", "battery", "custom/power"],
+
+    // Modules configuration
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "disable-markup" : false,
+        "all-outputs": true,
+        "persistent-workspaces": {
+          "*": 9
+        },
+        "format": " {icon} ",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+        },
+    }, 
+    "niri/workspaces": {
+        "format": " {icon} ",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+        },
+    }, 
+    "river/tags": {
+        "num-tags": 9,
+    },
+    "clock": {
+        "format": "<span color='#DAA69E'>󰸗</span> {:%a, %b %d - <span color='#DAA69E'>󰥔</span> %I:%M %p}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "<span color='#DAA69E'>󰻠</span> {usage}%",
+        "tooltip": false,
+        "interval": 1
+    },
+    "memory": {
+        "interval": 1,
+        "format": "<span color='#DAA69E'>󰍛</span> {}%"
+    },
+    "temperature": {
+        "interval": 1,
+        "critical-threshold": 80,
+        "format": "<span color='#DAA69E'>{icon}</span> {temperatureC}°C",
+        "format-icons": ["", "", ""]
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "<span color='#DAA69E'>{icon}</span> {capacity}%",
+        "format-charging": "<span color='#887C8D'>󰂄</span> {capacity}%",
+        "format-plugged": "<span color='#887C8D'>󰂄</span> {capacity}%",
+        "format-icons": ["󰁻", "󰁽", "󰁿", "󰂁", "󰁹"],
+        "interval": 20
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "<span color='#DAA69E'>󰖩</span> {essid}",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "󰖪 Disconnected",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "<span color='#DAA69E'>{icon}</span> {volume}%",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["󰝟", "󰖀", "󰖀", "󰕾"],
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/home": {
+      "format":"",
+      "tooltip": false
+    },
+    "custom/power": {
+      "format": "󰐥",
+      "on-click": "~/.config/rofi/scripts/power-menu.sh"
+    },
+    "custom/update": {
+        "interval" : 120,
+        "return-type" : "string",
+        "exec" : "~/.config/waybar/scripts/checkupdates.sh",
+        "tooltip" : false
+    },
+}
+
