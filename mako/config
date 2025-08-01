@@ -1,0 +1,13 @@
+on-notify=exec ~/.config/_scripts/notify.sh
+font=Iosevka 13
+border-radius=4,4,4,4
+padding=8,12,8,12
+default-timeout=5000
+
+# Colors
+text-color=#d6c5a9FF
+background-color=#171717FF
+border-color=#e78a4eFF
+
+[urgency=critical]
+border-color=#943838FF
