@@ -57,14 +57,14 @@
     "cpu": {
         "format": "<span color='#e78a4e'>󰻠</span> {usage}%",
         "tooltip": false,
-        "interval": 0.5
+        "interval": 1
     },
     "memory": {
-        "interval": 0.5,
+        "interval": 1,
         "format": "<span color='#e78a4e'>󰍛</span> {}%"
     },
     "temperature": {
-        "interval": 0.5,
+        "interval": 1,
         "critical-threshold": 80,
         "format": "<span color='#e78a4e'>{icon}</span> {temperatureC}°C",
         "format-icons": ["", "", ""]
