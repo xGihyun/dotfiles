@@ -1,4 +1,5 @@
-@import "./themes/gruvbox/material.css";
+/* @import "./themes/gruvbox/material.css"; */
+@import "./themes/plana/main.css";
 /*@import "./themes/rose-pine/main.conf";*/
 
 * {
@@ -8,7 +9,7 @@
 }
 
 window#waybar {
-    background-color: @crust;
+    background-color: @base;
     color: @text;
 }
 
@@ -38,7 +39,7 @@ window#waybar.hidden {
 }
 
 #workspaces button.active {
-    color: @orange;
+    color: @peach;
 }
 
 #workspaces button.urgent {
