@@ -53,7 +53,7 @@ function pg_connect
 end
 
 function fcd
-    set search_paths ~/ ~/Documents
+    set search_paths ~/ ~/Documents ~/documents
     set selection (find $search_paths -mindepth 1 -maxdepth 1 -type d | fzf)
     
     if test -n "$selection"
@@ -99,4 +99,11 @@ bind alt-tab accept-autosuggestion
 set fish_greeting
 starship init fish | source
 
-zoxide init fish | source
+# zoxide init fish | source
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
+set --export PATH "$HOME/go/bin" $PATH
+
+source "$HOME/.cargo/env.fish"  # For fish
