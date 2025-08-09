@@ -85,6 +85,7 @@ alias pnpx="pnpm dlx"
 
 set -gx EDITOR nvim
 set -gx ANDROID_HOME $HOME/Android/Sdk
+set -gx NDK_HOME /opt/android-ndk
 
 fish_add_path "$HOME/zig-linux-x86_64-0.14.0"
 
@@ -101,7 +102,6 @@ starship init fish | source
 
 # zoxide init fish | source
 
-# bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 set --export PATH "$HOME/go/bin" $PATH
