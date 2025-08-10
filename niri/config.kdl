@@ -398,7 +398,6 @@ binds {
 
     Mod+E { spawn "~/development/rofi-kaomoji/zig-out/bin/rofi_kaomoji"; }
     Mod+P { spawn "~/.config/rofi/scripts/power-menu.sh"; }
-    Mod+Shift+E { spawn "~/Development/rofi-kaomoji/zig-out/bin/rofi_kaomoji"; }
     Mod+SemiColon { spawn "~/.config/_scripts/binaural_beat.sh"; }
     Mod+Apostrophe { spawn "~/.config/_scripts/gammastep-toggle.sh"; }
 
