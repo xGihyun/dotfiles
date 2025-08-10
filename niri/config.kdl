@@ -395,7 +395,6 @@ binds {
     Mod+Return { spawn "foot"; }
     Mod+R { spawn "rofi" "-show" "drun"; }
     Mod+B { spawn "zen-browser"; }
-    Mod+E { spawn "nemo"; }
 
     Mod+P { spawn "~/.config/rofi/scripts/power-menu.sh"; }
     Mod+Shift+E { spawn "~/Development/rofi-kaomoji/zig-out/bin/rofi_kaomoji"; }
@@ -405,6 +404,8 @@ binds {
     // The allow-when-locked=true property makes them work even when the session is locked.
     Mod+Alt+I allow-when-locked=true { spawn "amixer" "-D" "pipewire" "sset" "Master" "5%+"; }
     Mod+Alt+D allow-when-locked=true { spawn "amixer" "-D" "pipewire" "sset" "Master" "5%-"; }
+    // Mod+Alt+I allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"; }
+    // Mod+Alt+D allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
 
     Mod+O repeat=false { toggle-overview; }
     Mod+Q { close-window; }
