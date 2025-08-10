@@ -5,7 +5,7 @@ chosen=$(printf "󰐥  Power Off\n  Restart\n󰍃  Log Out\n  Lock" | rofi
 case "$chosen" in
 "󰐥  Power Off") tmux kill-server & poweroff ;;
 "  Restart") tmux kill-server & reboot ;;
-"󰍃  Log Out") hyprctl dispatch exit ;;
+"󰍃  Log Out") loginctl terminate-user $USER ;;
 "  Lock") betterlockscreen -l ;;
 *) exit 1 ;;
 esac
