@@ -53,7 +53,7 @@ function pg_connect
 end
 
 function fcd
-    set search_paths ~/ ~/Documents ~/documents
+    set search_paths ~/ ~/documents
     set selection (find $search_paths -mindepth 1 -maxdepth 1 -type d | fzf)
     
     if test -n "$selection"

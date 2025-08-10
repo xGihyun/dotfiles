@@ -4,7 +4,7 @@ SESSION_COLOR=$(tput setaf 2)
 DIR_COLOR=$(tput setaf 4)
 RESET_COLOR=$(tput sgr0)
 
-search_paths=(~/ ~/Documents)
+search_paths=(~/ ~/documents)
 
 display_items=()
 data_items=()
