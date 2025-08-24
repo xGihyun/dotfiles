@@ -8,7 +8,8 @@ return {
     },
     config = function()
       local servers = {
-        pylsp = {},
+        -- pylsp = {},
+        ty = {},
         ruff = {},
         clangd = {},
         zls = {},
