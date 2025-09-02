@@ -1,29 +1,29 @@
 return {
-  -- {
-  --   "MeanderingProgrammer/render-markdown.nvim",
-  --   dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
-  --   ---@module 'render-markdown'
-  --   ---@type render.md.UserConfig
-  --   opts = {},
-  -- },
   {
-    "OXY2DEV/markview.nvim",
-    lazy = false,
-    priority = 49,
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
-    opts = {
-      preview = {
-        hybrid_modes = { "n" },
-      },
-      markdown = {
-        list_items = {
-          shift_width = 4,
-        },
-      },
-    },
+    "MeanderingProgrammer/render-markdown.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {},
   },
+  -- {
+  --   "OXY2DEV/markview.nvim",
+  --   lazy = false,
+  --   priority = 49,
+  --   dependencies = {
+  --     "nvim-tree/nvim-web-devicons",
+  --   },
+  --   opts = {
+  --     preview = {
+  --       hybrid_modes = { "n" },
+  --     },
+  --     markdown = {
+  --       list_items = {
+  --         shift_width = 4,
+  --       },
+  --     },
+  --   },
+  -- },
   {
     "zk-org/zk-nvim",
     config = function()
