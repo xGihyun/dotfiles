@@ -397,7 +397,7 @@ binds {
     Mod+B { spawn "zen-browser"; }
 
     Mod+E { spawn "~/development/rofi-kaomoji/zig-out/bin/rofi_kaomoji"; }
-    Mod+P { spawn "~/.config/rofi/scripts/power-menu.sh"; }
+    Mod+P { spawn "~/.config/_scripts/power-menu.sh"; }
     Mod+SemiColon { spawn "~/.config/_scripts/binaural_beat.sh"; }
     Mod+Apostrophe { spawn "~/.config/_scripts/gammastep-toggle.sh"; }
 
@@ -630,4 +630,9 @@ binds {
 cursor {
     xcursor-theme "Takanashi-Hoshino-Swimsuit"
     xcursor-size 32
+}
+
+hotkey-overlay {
+    skip-at-startup
+    hide-not-bound
 }
