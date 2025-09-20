@@ -36,6 +36,7 @@ return {
         cs = { "csharpier" },
         go = { "goimports", "gofumpt", "golines" },
         sh = { "shfmt" },
+        yaml = { "prettierd" },
       },
       formatters = {
         csharpier = {
