@@ -87,6 +87,7 @@ set -gx EDITOR nvim
 set -gx ANDROID_HOME $HOME/Android/Sdk
 set -gx NDK_HOME /opt/android-ndk
 set -gx CAPACITOR_ANDROID_STUDIO_PATH /usr/bin/android-studio
+set -gx JAVA_HOME /opt/android-studio/jbr
 
 fish_add_path "$HOME/zig-linux-x86_64-0.14.0"
 
