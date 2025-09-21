@@ -74,6 +74,11 @@ return {
         },
       })
     end,
+
+    require("mini.files").setup(),
+
+    vim.keymap.set("n", "-", "<CMD>lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>", { desc = "Navigate files" }),
+    vim.keymap.set("n", "_", "<CMD>lua MiniFiles.open()<CR>", { desc = "Navigate files" }),
   },
   {
     "brenoprata10/nvim-highlight-colors",
