@@ -39,13 +39,15 @@ selected_name=$(basename "$name" | tr . _)
 
 if [[ $type == "session" ]]; then
     [[ -z $TMUX ]] && tmux attach -t "$selected_name" || tmux switch-client -t "$selected_name"
-else
-    session_name=$(echo "$selected_name" | tr . _)
-
-    if [[ -z $TMUX ]]; then
-        tmux new-session -s "$session_name" -c "$session_name"
-    else
-        tmux new-session -ds "$session_name" -c "$session_name"
-        tmux switch-client -t "$session_name"
-    fi
+    exit 0
 fi
+
+session_name=$(echo "$selected_name" | tr . _)
+
+if [[ -z $TMUX ]]; then
+    tmux new-session -s "$session_name" -c "$name"
+    exit 0
+fi
+
+tmux new-session -ds "$session_name" -c "$name"
+tmux switch-client -t "$session_name"
