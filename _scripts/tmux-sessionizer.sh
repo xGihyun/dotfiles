@@ -4,7 +4,7 @@ SESSION_COLOR=$(tput setaf 2)
 DIR_COLOR=$(tput setaf 4)
 RESET_COLOR=$(tput sgr0)
 
-search_paths=(~/ ~/documents)
+search_paths=(~/ ~/documents ~/development)
 
 display_items=()
 data_items=()
@@ -35,11 +35,12 @@ selected_data="${data_items[selected_idx]}"
 
 type=${selected_data%%:*}
 name=${selected_data#*:}
+selected_name=$(basename "$name" | tr . _)
 
 if [[ $type == "session" ]]; then
-    [[ -z $TMUX ]] && tmux attach -t "$name" || tmux switch-client -t "$name"
+    [[ -z $TMUX ]] && tmux attach -t "$selected_name" || tmux switch-client -t "$selected_name"
 else
-    session_name=$(echo "$name" | tr . _)
+    session_name=$(echo "$selected_name" | tr . _)
 
     if [[ -z $TMUX ]]; then
         tmux new-session -s "$session_name" -c "$session_name"
