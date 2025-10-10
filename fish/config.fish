@@ -53,7 +53,7 @@ function pg_connect
 end
 
 function fcd
-    set search_paths ~/ ~/documents
+    set search_paths ~/ ~/documents ~/development
     set selection (find $search_paths -mindepth 1 -maxdepth 1 -type d | fzf)
     
     if test -n "$selection"
@@ -89,13 +89,11 @@ set -gx NDK_HOME /opt/android-ndk
 set -gx CAPACITOR_ANDROID_STUDIO_PATH /usr/bin/android-studio
 set -gx JAVA_HOME /opt/android-studio/jbr
 
-fish_add_path "$HOME/zig-linux-x86_64-0.14.0"
-
-
 ### Keybinds
 
 bind \cf "~/.config/_scripts/tmux-sessionizer.sh"
 bind alt-tab accept-autosuggestion
+bind \cx "clear; commandline -f repaint"
 
 ### Others
 
