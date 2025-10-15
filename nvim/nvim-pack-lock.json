@@ -1,0 +1,20 @@
+{
+  "plugins": {
+    "blink.cmp": {
+      "version": "1.0.0 - 2.0.0"
+    },
+    "fzf-lua": [],
+    "harpoon": {
+      "version": "'harpoon2'"
+    },
+    "mason.nvim": [],
+    "mini.nvim": [],
+    "nvim": [],
+    "nvim-lspconfig": [],
+    "nvim-treesitter": {
+      "version": "'master'"
+    },
+    "plenary.nvim": [],
+    "vim-tmux-navigator": []
+  }
+}
