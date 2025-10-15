@@ -316,18 +316,26 @@ vim.lsp.config("tailwindcss", {
 	end,
 })
 
-vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover Documentation" })
-vim.keymap.set("n", "gD", fzf.lsp_declarations, { desc = "[G]o to [D]eclaration" })
-vim.keymap.set("n", "<leader>gd", fzf.lsp_definitions, { desc = "[G]o to [D]efinition" })
-vim.keymap.set("n", "<leader>gi", fzf.lsp_implementations, { desc = "[G]o to [I]mplementation" })
-vim.keymap.set("n", "<leader>gt", fzf.lsp_typedefs, { desc = "[G]o to [T]ype Definition" })
-vim.keymap.set("n", "<leader>grr", fzf.lsp_references, { desc = "[G]o to [R]eferences" })
-vim.keymap.set("n", "<leader>grn", vim.lsp.buf.rename, { desc = "[R]ename" })
-vim.keymap.set("n", "<leader>ca", fzf.lsp_code_actions, { desc = "[C]ode [A]ctions" })
-vim.keymap.set("n", "<leader>ds", fzf.lsp_document_symbols, { desc = "[D]ocument [S]ymbols" })
-vim.keymap.set("n", "<leader>dd", fzf.diagnostics_document, { desc = "[D]ocument [D]iagnostics" })
-vim.keymap.set("n", "<leader>ws", fzf.lsp_workspace_symbols, { desc = "[W]orkspace [S]ymbols" })
-vim.keymap.set("n", "<leader>wd", fzf.diagnostics_workspace, { desc = "[W]orkspace [D]iagnostics" })
+vim.lsp.config("*", {
+	on_attach = function(event)
+		local map = function(keys, func, desc)
+			vim.keymap.set("n", keys, func, { buffer = event.bufnr, desc = "LSP: " .. desc })
+		end
+
+		map("K", vim.lsp.buf.hover, "Hover Documentation")
+		map("gD", fzf.lsp_declarations, "[G]o to [D]eclaration")
+		map("gd", fzf.lsp_definitions, "[G]o to [D]efinition")
+		map("gi", fzf.lsp_implementations, "[G]o to [I]mplementation")
+		map("gt", fzf.lsp_typedefs, "[G]o to [T]ype Definition")
+		map("grr", fzf.lsp_references, "[G]o to [R]eferences")
+		map("grn", vim.lsp.buf.rename, "[R]ename")
+		map("<leader>ca", fzf.lsp_code_actions, "[C]ode [A]ctions")
+		map("<leader>ds", fzf.lsp_document_symbols, "[D]ocument [S]ymbols")
+		map("<leader>dd", fzf.diagnostics_document, "[D]ocument [D]iagnostics")
+		map("<leader>ws", fzf.lsp_workspace_symbols, "[W]orkspace [S]ymbols")
+		map("<leader>wd", fzf.diagnostics_workspace, "[W]orkspace [D]iagnostics")
+	end,
+})
 
 -- Autocomplete
 vim.pack.add({
@@ -375,20 +383,27 @@ vim.pack.add({
 	"https://github.com/stevearc/conform.nvim",
 })
 
+local web_lsp_opts = {
+	"biome",
+	"prettier",
+	"prettierd",
+	stop_after_first = true,
+}
+
 require("conform").setup({
 	notify_on_error = false,
 	formatters_by_ft = {
 		injected = { options = { ignore_errors = true } },
 		lua = { "stylua" },
 		python = { "ruff_format" },
-		javascript = { "biome", "prettier", "prettierd", stop_after_first = true },
-		typescript = { "biome", "prettier", "prettierd", stop_after_first = true },
-		typescriptreact = { "biome", "prettier", "prettierd", stop_after_first = true },
-		markdown = { "prettier", "prettierd", "biome", stop_after_first = true },
-		json = { "biome", "prettierd", "prettier", stop_after_first = true },
-		astro = { "prettier", "prettierd", "biome", stop_after_first = true },
-		svelte = { "prettier", "prettierd", "biome", stop_after_first = true },
-		css = { "prettier", "prettierd", "biome", stop_after_first = true },
+		javascript = web_lsp_opts,
+		typescript = web_lsp_opts,
+		typescriptreact = web_lsp_opts,
+		markdown = web_lsp_opts,
+		json = web_lsp_opts,
+		astro = web_lsp_opts,
+		svelte = web_lsp_opts,
+		css = web_lsp_opts,
 		cs = { "csharpier" },
 		go = { "goimports", "gofumpt", "golines" },
 		sh = { "shfmt" },
@@ -411,5 +426,14 @@ vim.keymap.set("n", "<leader>cf", function()
 	})
 end, { desc = "[C]ode [F]ormat" })
 
--- Markdown
--- vim.pack.add({ "https://github.com/MeanderingProgrammer/render-markdown.nvim" })
+-- Highlight Colors
+vim.pack.add({
+	"https://github.com/brenoprata10/nvim-highlight-colors",
+})
+
+local colors = require("nvim-highlight-colors")
+
+colors.setup({})
+colors.turnOff()
+
+vim.keymap.set("n", "<leader>tc", colors.toggle, { desc = "[T]oggle [C]olors" })
