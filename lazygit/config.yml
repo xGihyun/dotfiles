@@ -1,4 +1,4 @@
 gui:
   theme:
     selectedLineBgColor:
-      - '#393240'
+      - reverse
