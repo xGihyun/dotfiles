@@ -1,7 +1,17 @@
 {
   "plugins": {
+    "LuaSnip": {
+      "rev": "4585605",
+      "src": "https://github.com/L3MON4D3/LuaSnip",
+      "version": "2.0.0 - 3.0.0"
+    },
     "blink.cmp": {
       "version": "1.0.0 - 2.0.0"
+    },
+    "conform.nvim": [],
+    "friendly-snippets": {
+      "rev": "572f566",
+      "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "fzf-lua": [],
     "harpoon": {
@@ -10,6 +20,7 @@
     "mason.nvim": [],
     "mini.nvim": [],
     "nvim": [],
+    "nvim-highlight-colors": [],
     "nvim-lspconfig": [],
     "nvim-treesitter": {
       "version": "'master'"
