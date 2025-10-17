@@ -50,6 +50,8 @@ vim.o.winborder = "rounded"
 vim.o.confirm = true
 vim.o.swapfile = false
 
+vim.opt.termguicolors = true
+
 -- Basic Keymaps
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
@@ -112,6 +114,12 @@ require("catppuccin").setup({
 
 vim.cmd.colorscheme("catppuccin")
 vim.cmd(":hi statusline guibg=NONE")
+
+-- Change color of cursor when using insert mode
+vim.api.nvim_set_hl(0, "CursorInsert", { fg = "#DAA69E", bg = "#DAA69E" })
+vim.opt.guicursor = {
+	"i-ci-ve:block-CursorInsert/lCursor",
+}
 
 -- Treesitter
 vim.pack.add({
