@@ -7,7 +7,9 @@
 // Find the full list of options on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Input
 
-workspace "browser"
+workspace "scratch"
+
+spawn-at-startup "niri" "msg" "action" "focus-workspace" "2"
 
 input {
     keyboard {
@@ -141,7 +143,7 @@ layout {
     // preset-window-heights { }
 
     // You can change the default width of the new windows.
-    default-column-width { proportion 1.0; }
+    default-column-width { proportion 0.5; }
     // If you leave the brackets empty, the windows themselves will decide their initial width.
     // default-column-width {}
 
@@ -391,6 +393,11 @@ binds {
     // shows a list of important hotkeys.
     Mod+Shift+Slash { show-hotkey-overlay; }
 
+    MouseForward { focus-workspace "scratch"; }
+    MouseBack { focus-workspace-previous; }
+
+    Mod+Tab { focus-workspace-previous; }
+
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return { spawn "foot"; }
     Mod+R { spawn "rofi" "-show" "drun"; }
@@ -524,24 +531,24 @@ binds {
     //
     // For example, with 2 workspaces + 1 empty, indices 3, 4, 5 and so on
     // will all refer to the 3rd workspace.
-    Mod+1 { focus-workspace 1; }
-    Mod+2 { focus-workspace 2; }
-    Mod+3 { focus-workspace 3; }
-    Mod+4 { focus-workspace 4; }
-    Mod+5 { focus-workspace 5; }
-    Mod+6 { focus-workspace 6; }
-    Mod+7 { focus-workspace 7; }
-    Mod+8 { focus-workspace 8; }
-    Mod+9 { focus-workspace 9; }
-    Mod+Ctrl+1 { move-column-to-workspace 1; }
-    Mod+Ctrl+2 { move-column-to-workspace 2; }
-    Mod+Ctrl+3 { move-column-to-workspace 3; }
-    Mod+Ctrl+4 { move-column-to-workspace 4; }
-    Mod+Ctrl+5 { move-column-to-workspace 5; }
-    Mod+Ctrl+6 { move-column-to-workspace 6; }
-    Mod+Ctrl+7 { move-column-to-workspace 7; }
-    Mod+Ctrl+8 { move-column-to-workspace 8; }
-    Mod+Ctrl+9 { move-column-to-workspace 9; }
+    Mod+1 { focus-workspace 2; }
+    Mod+2 { focus-workspace 3; }
+    Mod+3 { focus-workspace 4; }
+    Mod+4 { focus-workspace 5; }
+    Mod+5 { focus-workspace 6; }
+    Mod+6 { focus-workspace 7; }
+    Mod+7 { focus-workspace 8; }
+    Mod+8 { focus-workspace 9; }
+    Mod+n { focus-workspace "scratch"; }
+    Mod+Ctrl+1 { move-column-to-workspace 2; }
+    Mod+Ctrl+2 { move-column-to-workspace 3; }
+    Mod+Ctrl+3 { move-column-to-workspace 4; }
+    Mod+Ctrl+4 { move-column-to-workspace 5; }
+    Mod+Ctrl+5 { move-column-to-workspace 6; }
+    Mod+Ctrl+6 { move-column-to-workspace 7; }
+    Mod+Ctrl+7 { move-column-to-workspace 8; }
+    Mod+Ctrl+8 { move-column-to-workspace 9; }
+    Mod+Ctrl+n { move-column-to-workspace "scratch"; }
 
     // Alternatively, there are commands to move just a single window:
     // Mod+Ctrl+1 { move-window-to-workspace 1; }
