@@ -229,7 +229,7 @@ miniclue.setup({
 		{ mode = "x", keys = "<Leader>" },
 
 		-- Built-in completion
-		{ mode = "i", keys = "<C-x>" },
+		-- { mode = "i", keys = "<C-x>" },
 
 		-- `g` key
 		{ mode = "n", keys = "g" },
@@ -306,6 +306,8 @@ vim.lsp.enable({
 	"ty",
 	"ruff",
 	"clangd",
+	"jdtls",
+	"phpactor",
 })
 
 vim.lsp.config("tailwindcss", {
@@ -382,6 +384,10 @@ require("blink.cmp").setup({
 			},
 		},
 	},
+})
+
+vim.pack.add({
+	"https://github.com/mfussenegger/nvim-jdtls",
 })
 
 -- Snippets

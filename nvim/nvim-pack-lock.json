@@ -21,6 +21,10 @@
     "mini.nvim": [],
     "nvim": [],
     "nvim-highlight-colors": [],
+    "nvim-jdtls": {
+      "rev": "380ac14",
+      "src": "https://github.com/mfussenegger/nvim-jdtls"
+    },
     "nvim-lspconfig": [],
     "nvim-treesitter": {
       "version": "'master'"
