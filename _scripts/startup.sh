@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-swaybg -i ~/.config/_wallpapers/kayoko_ny-pixiv-106760656_p0.jpg -m fill &
+swaybg -i ~/.config/_wallpapers/hifumi-wallhaven-d6oe2g.png -m fill &
 waybar &
 # xwayland-satellite &
 mako &
