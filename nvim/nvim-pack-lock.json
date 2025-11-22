@@ -6,28 +6,31 @@
       "version": "2.0.0 - 3.0.0"
     },
     "blink.cmp": {
+      "rev": "b19413d",
       "version": "1.0.0 - 2.0.0"
     },
     "conform.nvim": {
-      "rev": "cde4da5"
+      "rev": "60df284"
     },
     "friendly-snippets": {
       "rev": "572f566",
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "fzf-lua": {
-      "rev": "be1c28b"
+      "rev": "3b4a5d1"
     },
     "harpoon": {
       "rev": "87b1a35",
       "version": "'harpoon2'"
     },
-    "mason.nvim": [],
+    "mason.nvim": {
+      "rev": "57e5a8a"
+    },
     "mini.nvim": {
-      "rev": "68d4478"
+      "rev": "6e885e4"
     },
     "nvim": {
-      "rev": "234fc04"
+      "rev": "da33755"
     },
     "nvim-highlight-colors": [],
     "nvim-jdtls": {
@@ -35,14 +38,14 @@
       "src": "https://github.com/mfussenegger/nvim-jdtls"
     },
     "nvim-lspconfig": {
-      "rev": "2010fc6"
+      "rev": "41d32cc"
     },
     "nvim-treesitter": {
       "version": "'master'"
     },
     "plenary.nvim": [],
     "typescript-tools.nvim": {
-      "rev": "db26c05",
+      "rev": "c2f5910",
       "src": "https://github.com/pmizio/typescript-tools.nvim"
     },
     "vim-tmux-navigator": []
