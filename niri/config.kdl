@@ -643,3 +643,7 @@ hotkey-overlay {
     skip-at-startup
     hide-not-bound
 }
+
+recent-windows {
+    off
+}
