@@ -12,7 +12,7 @@ data_items=()
 idx=0
 while IFS= read -r session; do
     if [[ -n $session ]]; then
-        display_items+=("${idx}|${SESSION_COLOR}󰈺${RESET_COLOR}  $session")
+        display_items+=("${idx}|${SESSION_COLOR}${RESET_COLOR}  $session")
         data_items+=("session:$session")
         ((idx++))
     fi
