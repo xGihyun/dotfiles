@@ -6,48 +6,71 @@
       "version": "2.0.0 - 3.0.0"
     },
     "blink.cmp": {
-      "rev": "b19413d",
+      "rev": "b19413d214068f316c78978b08264ed1c41830ec",
+      "src": "https://github.com/saghen/blink.cmp",
       "version": "1.0.0 - 2.0.0"
     },
     "conform.nvim": {
-      "rev": "60df284"
+      "rev": "4b713b9da0061a54750bfed457e190459be28c7b",
+      "src": "https://github.com/stevearc/conform.nvim"
     },
     "friendly-snippets": {
       "rev": "572f566",
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "fzf-lua": {
-      "rev": "3b4a5d1"
+      "rev": "a899e3e33c6c26ffeda5739fb6e7157cfc21ad6f",
+      "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "harpoon": {
-      "rev": "87b1a35",
+      "rev": "87b1a3506211538f460786c23f98ec63ad9af4e5",
+      "src": "https://github.com/ThePrimeagen/harpoon",
       "version": "'harpoon2'"
     },
     "mason.nvim": {
-      "rev": "57e5a8a"
+      "rev": "57e5a8addb8c71fb063ee4acda466c7cf6ad2800",
+      "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini.nvim": {
-      "rev": "6e885e4"
+      "rev": "43ec25063430196d36f5fff5758c9101775f3d57",
+      "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "nvim": {
-      "rev": "da33755"
+      "rev": "ce8d176faa4643e026e597ae3c31db59b63cef09",
+      "src": "https://github.com/catppuccin/nvim"
     },
-    "nvim-highlight-colors": [],
+    "nvim-highlight-colors": {
+      "rev": "e0c4a58ec8c3ca7c92d3ee4eb3bc1dd0f7be317e",
+      "src": "https://github.com/brenoprata10/nvim-highlight-colors"
+    },
     "nvim-jdtls": {
-      "rev": "38d265e",
+      "rev": "f73731b543f5971e0da9665eb1d7ceffe1fde71f",
       "src": "https://github.com/mfussenegger/nvim-jdtls"
     },
     "nvim-lspconfig": {
-      "rev": "41d32cc"
+      "rev": "41ceb6bba3a40128b7841f5b7f5a9dae7201e823",
+      "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
+      "rev": "42fc28ba918343ebfd5565147a42a26580579482",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'master'"
     },
-    "plenary.nvim": [],
+    "plenary.nvim": {
+      "rev": "b9fd5226c2f76c951fc8ed5923d85e4de065e509",
+      "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "render-markdown.nvim": {
+      "rev": "07d088bf8bdadd159eb807b90eaee86a4778383f",
+      "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
+    },
     "typescript-tools.nvim": {
       "rev": "c2f5910",
       "src": "https://github.com/pmizio/typescript-tools.nvim"
     },
-    "vim-tmux-navigator": []
+    "vim-tmux-navigator": {
+      "rev": "c45243dc1f32ac6bcf6068e5300f3b2b237e576a",
+      "src": "https://github.com/christoomey/vim-tmux-navigator"
+    }
   }
 }
