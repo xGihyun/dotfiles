@@ -19,7 +19,7 @@
   { "value": "(๑˃ᴗ˂)ﻭ", "tags": ["cute fists"] },
   { "value": "(´,,•ω•,,)♡", "tags": ["love"] },
   { "value": "( ´･･)ﾉ(._.`)", "tags": ["headpat"] },
-  { "value": "(ノ｀Д´)ノ彡┻━┻", "tags": ["table throw"] },
+  { "value": "(ノ｀Д´)ノ彡┻━┻", "tags": ["table flip"] },
   { "value": "|･ω･)", "tags": ["peek"] },
   { "value": "ᕙ(⇀‸↼‶)ᕗ", "tags": ["flex"] },
   { "value": "(╥﹏╥)", "tags": ["crying"] },
@@ -49,5 +49,11 @@
   { "value": "⊂(´• ω •`⊂)", "tags": ["hugging"] },
   { "value": "( U Δ U )", "tags": ["bronya"] },
   { "value": "( • ω • )", "tags": ["happy"] },
-  { "value": "ლ(´ڡ`ლ)", "tags": ["delicious"] }
+  { "value": "ლ(´ڡ`ლ)", "tags": ["delicious"] },
+  { "value": "(ﾉ≧∇≦)ﾉ ﾐ ┸┸", "tags": ["table flip"] },
+  { "value": "(/^▽^)/", "tags": ["excited", "happy"] },
+  { "value": "Ｏ(≧▽≦)Ｏ", "tags": ["excited", "happy"] },
+  { "value": "Ｏ(≧▽≦)Ｏ", "tags": ["excited", "happy"] },
+  { "value": "s(・｀ヘ´・;)ゞ", "tags": ["angry"] },
+  { "value": "（▼へ▼メ）", "tags": ["angry"] }
 ]
