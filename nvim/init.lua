@@ -341,7 +341,7 @@ vim.lsp.config("*", {
 		map("<leader>dd", fzf.diagnostics_document, "[D]ocument [D]iagnostics")
 		map("<leader>ws", fzf.lsp_workspace_symbols, "[W]orkspace [S]ymbols")
 		map("<leader>wd", fzf.diagnostics_workspace, "[W]orkspace [D]iagnostics")
-		map("<leader>cr", "<Cmd>LspRestart<CR>", "[R]estart LSP")
+		map("<leader>cr", "<Cmd>lsp restart<CR>", "[R]estart LSP")
 	end,
 })
 
