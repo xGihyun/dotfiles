@@ -81,7 +81,7 @@ vim.keymap.set(
 )
 
 -- Theme
-vim.pack.add({ "https://github.com/catppuccin/nvim" })
+vim.pack.add({ "https://github.com/catppuccin/nvim", "https://github.com/wnkz/monoglow.nvim" })
 
 require("catppuccin").setup({
 	flavour = "mocha",
@@ -107,6 +107,13 @@ require("catppuccin").setup({
 			yellow = "#AB9BA4",
 		},
 	},
+})
+
+require("monoglow").setup({
+	-- Change the "glow" color
+	on_colors = function(colors)
+		colors.glow = "#DAA69E"
+	end,
 })
 
 vim.cmd.colorscheme("catppuccin")
@@ -165,8 +172,22 @@ vim.keymap.set("n", "<leader>fF", function()
 end, {})
 vim.keymap.set("n", "<leader>fg", fzf.live_grep, {})
 vim.keymap.set("n", "<leader>fb", fzf.buffers, {})
-vim.keymap.set("n", "<leader>ft", "<Cmd>TodoFzfLua<CR>", {
-	desc = "[F]ind [T]odo Notes",
+
+local TODO_PATTERN = [[\b(TODO):]]
+
+local function todo_grep()
+	if not pcall(require, "fzf-lua") then
+		print("fzf-lua not loaded. Please ensure it is installed.")
+		return
+	end
+
+	require("fzf-lua").grep_project({
+		search = TODO_PATTERN,
+	})
+end
+
+vim.keymap.set("n", "<leader>ft", todo_grep, {
+	desc = "[F]ind [T]odo",
 })
 
 -- Harpoon
@@ -428,6 +449,7 @@ require("conform").setup({
 		go = { "goimports", "gofumpt", "golines" },
 		sh = { "shfmt" },
 		yaml = { "prettierd" },
+		php = { "phpcfb" },
 	},
 	formatters = {
 		csharpier = {
@@ -457,3 +479,13 @@ colors.setup({})
 colors.turnOff()
 
 vim.keymap.set("n", "<leader>tc", colors.toggle, { desc = "[T]oggle [C]olors" })
+
+-- Rust
+vim.pack.add({
+	{
+		src = "https://github.com/Saecki/crates.nvim",
+		version = "stable",
+	},
+})
+
+require("crates").setup()

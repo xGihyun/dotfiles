@@ -105,5 +105,6 @@ starship init fish | source
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 set --export PATH "$HOME/go/bin" $PATH
+set --export PATH "/opt/lampp" $PATH
 
 source "$HOME/.cargo/env.fish"  # For fish

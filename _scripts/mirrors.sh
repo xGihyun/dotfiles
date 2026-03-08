@@ -17,7 +17,6 @@ reflector -c HK,ID,SG,TW,TH,VN \
     --protocol https \
     --sort score \
     --latest 40 \
-    --fastest 20 \
     --age 12 \
     --download-timeout 5 \
     --threads 4 \

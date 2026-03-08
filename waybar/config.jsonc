@@ -1,14 +1,14 @@
 {
     "layer": "top", 
     "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 42, 
+    // "height": 20, 
     // "width": 1280, 
     "spacing": 4, // Gaps between modules (4px)
     "margin": "0px",
     // Choose the order of the modules
-    "modules-left": ["custom/home", "hyprland/workspaces", "river/tags", "niri/workspaces"],
+    "modules-left": ["hyprland/workspaces", "river/tags", "niri/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["network", "pulseaudio", "battery", "custom/power"],
+    "modules-right": ["network", "pulseaudio", "battery"],
     // "modules-right": ["custom/update", "temperature", "cpu", "memory", "network", "pulseaudio", "battery", "custom/power"],
 
     // Modules configuration

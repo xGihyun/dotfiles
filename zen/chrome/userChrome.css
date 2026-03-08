@@ -128,3 +128,9 @@
     background-color: #151414 !important;
   }
 }
+
+select > menupopup,
+select > menupopup > menuitem {
+  background-color: white !important;
+  color: black !important;
+}
